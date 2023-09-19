@@ -20,8 +20,8 @@ import {
   TabPanels,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import MLPic from "../pictures/Machine_Learning_Card_Picture.png";
-import PersonalProjectPic from "../pictures/School_Projects_Card_Front_Page.jpg";
+import MLPic from "../../pictures/Machine_Learning_Card_Picture.png";
+import PersonalProjectPic from "../../pictures/School_Projects_Card_Front_Page.jpg";
 
 import React from "react";
 
@@ -34,7 +34,7 @@ function Project() {
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
           <Tab>Machine Learning Projects</Tab>
-          <Tab>Other School Projects</Tab>
+          <Tab>Other Projects</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -53,7 +53,7 @@ function Project() {
                   </Text>
                   <Link to="/MLProjects">
                     <Button variant="solid" colorScheme="blue">
-                      Buy now
+                      Click Here
                     </Button>
                   </Link>
                 </Stack>
@@ -77,7 +77,7 @@ function Project() {
                   </Text>
                   <Link to="/SchoolProjects">
                     <Button variant="solid" colorScheme="blue">
-                      Buy now
+                      Click Here
                     </Button>
                   </Link>
                 </Stack>

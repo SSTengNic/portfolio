@@ -15,7 +15,7 @@ function ContactMe() {
   return (
     <Container>
       <Text mb={5} alignContent="center" fontSize="3xl">
-        Let's Keep in Touch
+        Let's Keep in Touch.
       </Text>
       <Stack>
         <HStack spacing="30px">

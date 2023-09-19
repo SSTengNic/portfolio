@@ -1,8 +1,9 @@
 import { VStack, Container, useColorMode, Text } from "@chakra-ui/react";
 import Header from "./Header";
-import Profile from "./Profile";
-import Project from "./Project";
-import ContactMe from "./ContactMe";
+import Profile from "./HomePageParts/Profile";
+import Project from "./HomePageParts/Project";
+import ContactMe from "./HomePageParts/ContactMe";
+import SoftSkillSHardSkills from "./HomePageParts/SoftSkillsHardSkills";
 
 function HomePage() {
   const { colorMode } = useColorMode();
@@ -19,7 +20,7 @@ function HomePage() {
         <Container
           id="section1"
           backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
-          boxShadow="md"
+          boxShadow="xl"
           p={4}
           borderRadius="md"
           w="100%"
@@ -31,7 +32,7 @@ function HomePage() {
         <Container
           id="section2"
           backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
-          boxShadow="md"
+          boxShadow="xl"
           p={4}
           borderRadius="md"
           w="100%"
@@ -43,22 +44,38 @@ function HomePage() {
         <Container
           id="section3"
           backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
-          boxShadow="md"
+          boxShadow="xl"
           p={4}
           borderRadius="md"
           w="100%"
+          mb={4}
         >
           <Project />
         </Container>
 
         <Container
-          id="section4"
+          id="section3"
           backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
-          boxShadow="md"
+          boxShadow="xl"
           p={4}
           borderRadius="md"
           w="100%"
           textAlign="center"
+          alignContent="center"
+          mb={4}
+        >
+          <SoftSkillSHardSkills />
+        </Container>
+
+        <Container
+          id="section4"
+          backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
+          boxShadow="xl"
+          p={4}
+          borderRadius="md"
+          w="100%"
+          textAlign="center"
+          mb={4}
         >
           <ContactMe />
         </Container>

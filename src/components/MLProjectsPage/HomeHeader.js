@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSun, FaMoon, FaLinkedin, FaMailBulk } from "react-icons/fa";
+import { FaSun, FaMoon, FaLinkedin, FaMailBulk, FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import {
@@ -11,7 +11,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 
-function Header() {
+function HomeHeader() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
@@ -27,17 +27,13 @@ function Header() {
     <Container>
       <Flex w="100%">
         <Heading size="md" fontWeight="semibold" mt="5px">
-          Welcome to my portfolio.
+          Machine Learning Projects
         </Heading>
         <Spacer></Spacer>
 
-        <IconButton
-          ml={2}
-          icon={<FaMailBulk />}
-          isRound="true"
-          onClick={() => scrollToSection("section4")}
-        ></IconButton>
-
+        <Link to="/portfolio">
+          <IconButton ml={2} icon={<FaHome />} isRound="true"></IconButton>
+        </Link>
         <a
           href="https://www.linkedin.com/in/nicholas-teng/"
           rel="noopener noreferrer"
@@ -62,4 +58,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HomeHeader;

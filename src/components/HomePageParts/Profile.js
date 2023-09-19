@@ -1,5 +1,5 @@
 import { Container, Text, Box, Avatar } from "@chakra-ui/react";
-import profilePic from "../pictures/profile_pic.jpg";
+import profilePic from "../../pictures/profile_pic.jpg";
 
 import React from "react";
 
