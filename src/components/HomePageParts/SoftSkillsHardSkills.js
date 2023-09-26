@@ -18,7 +18,10 @@ function SoftSkillSHardSkills() {
   return (
     <SimpleGrid
       spacing={4}
-      templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+      templateColumns={{
+        base: "1fr", // For small screens, one card per row
+        sm: "repeat(auto-fill, minmax(200px, 1fr))", // For screens of width 640px and above, adjust as needed
+      }}
     >
       <Card
         style={{
@@ -29,13 +32,13 @@ function SoftSkillSHardSkills() {
         }}
       >
         <CardHeader>
-          <Heading size="md">
+          <Heading style={{ fontSize: "28px" }} mb={-5}>
             <span style={{ display: "flex", alignItems: "center" }}>
               Soft Skills <FaHandshake style={{ marginLeft: "15px" }} />
             </span>
           </Heading>
         </CardHeader>
-        <CardBody textAlign="left">
+        <CardBody textAlign="left" mb={-5}>
           {" "}
           {/* Align the text to the left */}
           <List spacing={3}>
@@ -73,19 +76,23 @@ function SoftSkillSHardSkills() {
         }}
       >
         <CardHeader>
-          <Heading size="md">
+          <Heading style={{ fontSize: "28px" }} mb={-5}>
             <span style={{ display: "flex", alignItems: "center" }}>
               Hard Skills <FaWrench style={{ marginLeft: "15px" }} />
             </span>
           </Heading>
         </CardHeader>
-        <CardBody textAlign="left">
+        <CardBody textAlign="left" mb={-5}>
           {" "}
           {/* Align the text to the left */}
           <List spacing={3}>
             <ListItem>
               <ListIcon as={AiFillCheckCircle} color="green.500" />
               Machine Learning
+            </ListItem>
+            <ListItem>
+              <ListIcon as={AiFillCheckCircle} color="green.500" />
+              UiPath
             </ListItem>
             <ListItem>
               <ListIcon as={AiFillCheckCircle} color="green.500" />
@@ -120,7 +127,7 @@ function SoftSkillSHardSkills() {
             </span>
           </Heading>
         </CardHeader>
-        <CardBody textAlign="left">
+        <CardBody textAlign="left" mb={-10}>
           <List spacing={3}>
             <ListItem>
               <ListIcon as={AiFillCheckCircle} color="green.500" />
