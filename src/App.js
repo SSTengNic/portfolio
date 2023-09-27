@@ -14,7 +14,7 @@ function App() {
         {/* Set your desired tab title here */}
       </Helmet>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/portfolio" element={<HomePage />} />
         <Route path="/SchoolProjects" element={<OPPage />} />
         <Route path="/MLProjects" element={<MLProjectsPage />} />
         <Route path="/Certificates" element={<CertificatesPage />} />
