@@ -8,12 +8,17 @@ function Profile() {
     <Container textAlign="center">
       <Avatar size="2xl" name="Nicholas Teng" src={profilePic} />
 
-      <Text fontSize="3xl">Nicholas Teng</Text>
+      <Text fontSize="3xl" style={{ textDecoration: "underline" }}>
+        Nicholas Teng
+      </Text>
+      <Text fontSize="xl" mb={3}>
+        Hi there! I'm a Computer Science and Design (CSD) student from the
+        Singapore University of Technology and Design (SUTD).
+      </Text>
+
       <Text fontSize="xl">
-        Hi there! I'm a Computer Science and Design(CSD) student from the
-        Singapore University of Technology and Design(SUTD). I am an aspiring
-        Machine Learning Engineer, and have hobbies such as 3D printing and RPA
-        automation. Do take a look at my projects!{" "}
+        I am an aspiring Machine Learning Engineer, and have hobbies such as 3D
+        printing and RPA automation. Do take a look at my projects!{" "}
       </Text>
     </Container>
   );

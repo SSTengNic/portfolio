@@ -20,13 +20,10 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  SimpleGrid,
   IconButton,
   Box,
-  Divider,
 } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 

@@ -20,13 +20,10 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  SimpleGrid,
   IconButton,
   Box,
-  Divider,
   AspectRatio,
 } from "@chakra-ui/react";
 

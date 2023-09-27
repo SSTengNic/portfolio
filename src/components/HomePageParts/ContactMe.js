@@ -3,13 +3,13 @@ import {
   Text,
   Icon,
   Container,
-  IconButton,
-  Flex,
-  Spacer,
   HStack,
   Stack,
+  Divider,
 } from "@chakra-ui/react";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+
+import ContactForm from "./ContactForm";
 
 function ContactMe() {
   return (
@@ -18,6 +18,8 @@ function ContactMe() {
         Let's Keep in Touch.
       </Text>
       <Stack>
+        <ContactForm />
+        <Divider></Divider>
         <HStack spacing="30px">
           <Icon as={FaLinkedin} boxSize={6} />
           <Text>https://www.linkedin.com/in/nicholas-teng/ </Text>

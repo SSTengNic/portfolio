@@ -4,7 +4,6 @@ import {
   CardHeader,
   Heading,
   CardBody,
-  Text,
   CardFooter,
   List,
   ListItem,
@@ -16,13 +15,7 @@ import React from "react";
 
 function SoftSkillSHardSkills() {
   return (
-    <SimpleGrid
-      spacing={4}
-      templateColumns={{
-        base: "1fr", // For small screens, one card per row
-        sm: "repeat(auto-fill, minmax(200px, 1fr))", // For screens of width 640px and above, adjust as needed
-      }}
-    >
+    <SimpleGrid columns={2} spacing={2}>
       <Card
         style={{
           display: "flex",

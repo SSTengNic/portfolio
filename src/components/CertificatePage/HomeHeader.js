@@ -31,7 +31,7 @@ function HomeHeader() {
         </Heading>
         <Spacer></Spacer>
 
-        <Link to="/portfolio">
+        <Link to="/">
           <IconButton ml={2} icon={<FaHome />} isRound="true"></IconButton>
         </Link>
         <a
