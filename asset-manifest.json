@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.aa089799.css",
-    "main.js": "/portfolio/static/js/main.0521ee0a.js",
-    "static/js/787.a8a21f2e.chunk.js": "/portfolio/static/js/787.a8a21f2e.chunk.js",
-    "static/media/School_Projects_Card_Front_Page.jpg": "/portfolio/static/media/School_Projects_Card_Front_Page.a360c148ba3958ae7274.jpg",
-    "static/media/FullStack Certificate.png": "/portfolio/static/media/FullStack Certificate.24bd8c4f4432825760fa.png",
-    "static/media/confetti.jpg": "/portfolio/static/media/confetti.8714d3fcd2387c76636a.jpg",
-    "static/media/profile_pic.jpg": "/portfolio/static/media/profile_pic.34678b6dba144a9682c2.jpg",
-    "static/media/UiPath_RPA_Developer_Advanced_Cert.jpg": "/portfolio/static/media/UiPath_RPA_Developer_Advanced_Cert.7727fca3f642e4c8706b.jpg",
-    "static/media/Ngee_Ann_Polytechnic_logo.jpg": "/portfolio/static/media/Ngee_Ann_Polytechnic_logo.70e2a0db981302f5da33.jpg",
-    "static/media/PinchPromoLogo.jpg": "/portfolio/static/media/PinchPromoLogo.4f50c7d0e2e427a29bf2.jpg",
-    "static/media/Certs_pic.jpg": "/portfolio/static/media/Certs_pic.da61cac6603a487abda4.jpg",
-    "static/media/HungrySiaLogo.jpg": "/portfolio/static/media/HungrySiaLogo.82814916140d5b7269ee.jpg",
-    "static/media/Machine_Learning_Card_Picture.png": "/portfolio/static/media/Machine_Learning_Card_Picture.8c52c21646ffc56f77db.png",
-    "index.html": "/portfolio/index.html",
-    "main.aa089799.css.map": "/portfolio/static/css/main.aa089799.css.map",
-    "main.0521ee0a.js.map": "/portfolio/static/js/main.0521ee0a.js.map",
-    "787.a8a21f2e.chunk.js.map": "/portfolio/static/js/787.a8a21f2e.chunk.js.map"
+    "main.css": "/static/css/main.b22d595c.css",
+    "main.js": "/static/js/main.ef817f96.js",
+    "static/js/787.a8a21f2e.chunk.js": "/static/js/787.a8a21f2e.chunk.js",
+    "static/media/School_Projects_Card_Front_Page.jpg": "/static/media/School_Projects_Card_Front_Page.a360c148ba3958ae7274.jpg",
+    "static/media/FullStack Certificate.png": "/static/media/FullStack Certificate.24bd8c4f4432825760fa.png",
+    "static/media/confetti.jpg": "/static/media/confetti.8714d3fcd2387c76636a.jpg",
+    "static/media/profile_pic.jpg": "/static/media/profile_pic.34678b6dba144a9682c2.jpg",
+    "static/media/UiPath_RPA_Developer_Advanced_Cert.jpg": "/static/media/UiPath_RPA_Developer_Advanced_Cert.7727fca3f642e4c8706b.jpg",
+    "static/media/Ngee_Ann_Polytechnic_logo.jpg": "/static/media/Ngee_Ann_Polytechnic_logo.70e2a0db981302f5da33.jpg",
+    "static/media/PinchPromoLogo.jpg": "/static/media/PinchPromoLogo.4f50c7d0e2e427a29bf2.jpg",
+    "static/media/Certs_pic.jpg": "/static/media/Certs_pic.da61cac6603a487abda4.jpg",
+    "static/media/HungrySiaLogo.jpg": "/static/media/HungrySiaLogo.82814916140d5b7269ee.jpg",
+    "static/media/Machine_Learning_Card_Picture.png": "/static/media/Machine_Learning_Card_Picture.8c52c21646ffc56f77db.png",
+    "index.html": "/index.html",
+    "main.b22d595c.css.map": "/static/css/main.b22d595c.css.map",
+    "main.ef817f96.js.map": "/static/js/main.ef817f96.js.map",
+    "787.a8a21f2e.chunk.js.map": "/static/js/787.a8a21f2e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa089799.css",
-    "static/js/main.0521ee0a.js"
+    "static/css/main.b22d595c.css",
+    "static/js/main.ef817f96.js"
   ]
 }
