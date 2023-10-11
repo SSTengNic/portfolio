@@ -1,12 +1,17 @@
 import { Container, Text, Box, Avatar } from "@chakra-ui/react";
-import profilePic from "../../pictures/profile_pic.jpg";
+import profilePic from "../../pictures/new_profile_pic.jpg";
 
 import React from "react";
 
 function Profile() {
   return (
     <Container textAlign="center">
-      <Avatar size="2xl" name="Nicholas Teng" src={profilePic} />
+      <Avatar
+        width="200px"
+        height="200px"
+        name="Nicholas Teng"
+        src={profilePic}
+      />
 
       <Text fontSize="3xl" style={{ textDecoration: "underline" }}>
         Nicholas Teng
