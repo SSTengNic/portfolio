@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSun, FaMoon, FaLinkedin, FaMailBulk, FaHome } from "react-icons/fa";
+import { FaSun, FaMoon, FaLinkedin, FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import {
@@ -10,6 +10,7 @@ import {
   Spacer,
   Container,
 } from "@chakra-ui/react";
+
 
 function HomeHeader() {
   const { colorMode, toggleColorMode } = useColorMode();
