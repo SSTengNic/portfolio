@@ -24,6 +24,7 @@ function HomePage() {
                     p={4}
                     borderRadius="md"
                     w="100%"
+                    maxW="600px"
                     mb={4}
                 >
                     <Header />
@@ -36,6 +37,7 @@ function HomePage() {
                     p={4}
                     borderRadius="md"
                     w="100%"
+                    maxW="600px"
                     mb={4}
                 >
                     <Profile />
@@ -48,6 +50,7 @@ function HomePage() {
                     p={4}
                     borderRadius="md"
                     w="100%"
+                    maxW="600px"
                     mb={4}
                 >
                     <Project />
@@ -60,6 +63,7 @@ function HomePage() {
                     p={4}
                     borderRadius="md"
                     w="100%"
+                    maxW="600px"
                     textAlign="center"
                     alignContent="center"
                     mb={4}
@@ -74,6 +78,7 @@ function HomePage() {
                     p={4}
                     borderRadius="md"
                     w="100%"
+                    maxW="600px"
                     textAlign="center"
                     mb={4}
                 >

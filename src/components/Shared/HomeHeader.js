@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSun, FaMoon, FaLinkedin, FaHome } from "react-icons/fa";
+import { FaSun, FaMoon, FaLinkedin, FaHome, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import {
@@ -10,24 +10,25 @@ import {
     Spacer,
     Container,
 } from "@chakra-ui/react";
-
-function HomeHeader() {
+import backgroundColors from "./Colors";
+function HomeHeader({ HomeHeaderText }) {
     const { colorMode, toggleColorMode } = useColorMode();
     const isDark = colorMode === "dark";
 
-    const scrollToSection = (sectionId) => {
-        const sectionElement = document.getElementById(sectionId);
-        console.log("Hello");
-        if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: "smooth" });
-        }
-    };
-
     return (
-        <Container>
+        <Container
+            id="section1"
+            backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
+            boxShadow="xl"
+            p={4}
+            borderRadius="md"
+            w="100%"
+            maxW="600px"
+            mb={4}
+        >
             <Flex w="100%">
                 <Heading size="md" fontWeight="semibold" mt="5px">
-                    Machine Learning Projects
+                    {HomeHeaderText}
                 </Heading>
                 <Spacer></Spacer>
 
@@ -36,6 +37,7 @@ function HomeHeader() {
                         ml={2}
                         icon={<FaHome />}
                         isRound="true"
+                        style={{ fontSize: "22px" }}
                     ></IconButton>
                 </Link>
                 <a
@@ -48,12 +50,32 @@ function HomeHeader() {
                         icon={<FaLinkedin />}
                         isRound="true"
                         onClick={null}
+                        style={{ fontSize: "22px" }}
+                    ></IconButton>
+                </a>
+
+                <a
+                    href="https://github.com/SSTengNic"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <IconButton
+                        ml={2}
+                        icon={<FaGithub style={{ fontSize: "22px" }} />}
+                        isRound="true"
+                        onClick={null}
                     ></IconButton>
                 </a>
 
                 <IconButton
                     ml={2}
-                    icon={isDark ? <FaSun /> : <FaMoon />}
+                    icon={
+                        isDark ? (
+                            <FaSun style={{ fontSize: "22px" }} />
+                        ) : (
+                            <FaMoon style={{ fontSize: "22px" }} />
+                        )
+                    }
                     isRound="true"
                     onClick={toggleColorMode}
                 ></IconButton>

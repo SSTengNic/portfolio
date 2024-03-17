@@ -32,7 +32,15 @@ function MLBody() {
     } = useDisclosure();
 
     return (
-        <Container textAlign="center">
+        <Container
+            boxShadow="xl"
+            p={4}
+            borderRadius="md"
+            w="100%"
+            maxW="600px"
+            mb={4}
+            textAlign="center"
+        >
             <Text mb={5} fontSize="3xl">
                 Kaggle, Getting Started
             </Text>

@@ -54,14 +54,16 @@ cancer probability.
 };
 
 const AmesHousingObject = {
-    writeup: `Ames Housing Writeup, insert here.`,
+    writeup: `The aim of this project is to predict the final price of each home using the Ames Housing dataset. This competition provided a valuable learning opportunity for me to delve deeper into machine learning techniques.
+     Through this experience, I honed my skills in data processing and applied techniques gleaned from previous projects, culminating in an outcome that I find highly satisfying.`,
     kaggleLink: `https://www.kaggle.com/datasets/prevek18/ames-housing-dataset`,
-    notebookLink: `https://github.com/SSTengNic/MachineLearningProjects/tree/main/Ames%20Housing%20Dataset%20Competition`,
+    notebookLink: `https://github.com/SSTengNic/MachineLearningProjects/blob/main/Ames%20Housing%20Dataset%20Competition/Ames%20Housing.ipynb`,
     precisionScore: [{ text: "CatBoost Regressor", value: "0.9894" }],
 };
 
 const IrisSpeciesObject = {
-    writeup: `Iries Species Writeup, insert here. ** Note to explain the accuracy when using all the feautres and then separaiting the petal and sepal features.`,
+    writeup: `The primary goal of this project is to conduct a comprehensive analysis of the Iris species dataset using Python packages.
+     Additionally, the project aims to develop a machine learning model, specifically Logistic Regression and K-Nearest Neighbors, to accurately predict the type of Iris species based on the information provided in the "Iris.csv" file.`,
     kaggleLink: `https://www.kaggle.com/datasets/uciml/iris`,
     notebookLink: `https://github.com/SSTengNic/MachineLearningProjects/blob/main/Iris%20Species%20project/iri_notebook.ipynb`,
     precisionScore: [

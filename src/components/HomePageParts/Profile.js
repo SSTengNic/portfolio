@@ -22,9 +22,9 @@ function Profile() {
             </Text>
 
             <Text fontSize="xl">
-                I am an aspiring Machine Learning Engineer, and have hobbies
-                such as 3D printing and RPA automation. Do take a look at my
-                projects!{" "}
+                I am an aspiring Backend Developer, and have hobbies such as
+                doing Machine Learning projects and RPA automation. Do take a
+                look at my projects!{" "}
             </Text>
         </Container>
     );
