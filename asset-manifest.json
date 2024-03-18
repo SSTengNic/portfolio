@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.644f8559.css",
-    "main.js": "/portfolio/static/js/main.293ebb04.js",
+    "main.js": "/portfolio/static/js/main.2a870678.js",
     "static/js/787.a8a21f2e.chunk.js": "/portfolio/static/js/787.a8a21f2e.chunk.js",
     "static/media/School_Projects_Card_Front_Page.jpg": "/portfolio/static/media/School_Projects_Card_Front_Page.a360c148ba3958ae7274.jpg",
     "static/media/FullStack Certificate.png": "/portfolio/static/media/FullStack Certificate.24bd8c4f4432825760fa.png",
@@ -16,11 +16,11 @@
     "static/media/Machine_Learning_Card_Picture.png": "/portfolio/static/media/Machine_Learning_Card_Picture.8c52c21646ffc56f77db.png",
     "index.html": "/portfolio/index.html",
     "main.644f8559.css.map": "/portfolio/static/css/main.644f8559.css.map",
-    "main.293ebb04.js.map": "/portfolio/static/js/main.293ebb04.js.map",
+    "main.2a870678.js.map": "/portfolio/static/js/main.2a870678.js.map",
     "787.a8a21f2e.chunk.js.map": "/portfolio/static/js/787.a8a21f2e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.644f8559.css",
-    "static/js/main.293ebb04.js"
+    "static/js/main.2a870678.js"
   ]
 }
