@@ -12,6 +12,8 @@ import {
     TabList,
     TabPanel,
     TabPanels,
+    Wrap,
+    WrapItem,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import webAppPic from "../../pictures/Web_Application_Pic.jpeg";
@@ -36,12 +38,20 @@ function Project() {
                 My Projects
             </Text>
             <Tabs isFitted variant="enclosed">
-                <TabList mb="1em">
-                    <Tab> Web Application Projects </Tab>
-                    <Tab>Machine Learning Projects</Tab>
-                    <Tab>Other Projects</Tab>
-                    <Tab>Certificates</Tab>
-                </TabList>
+                <Wrap spacing="1em" justify="center">
+                    <WrapItem>
+                        <Tab> Web Application Projects </Tab>
+                    </WrapItem>
+                    <WrapItem>
+                        <Tab>Machine Learning Projects</Tab>
+                    </WrapItem>
+                    <WrapItem>
+                        <Tab>Other Projects</Tab>
+                    </WrapItem>
+                    <WrapItem>
+                        <Tab>Certificates</Tab>
+                    </WrapItem>
+                </Wrap>
                 <TabPanels>
                     <TabPanel mx="auto">
                         <Card maxW="sm" mx="auto">
