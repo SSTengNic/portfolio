@@ -8,12 +8,12 @@ import theme from "./components/HomePageParts/LightDarkTheme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
-    </ChakraProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <ChakraProvider theme={theme}>
+            <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+            <App />
+        </ChakraProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.glow {
+  box-shadow: 0 0 10px rgba(248, 248, 248, 0.5); /* Adjust the shadow color and size */
+}
+
+.custom-next-arrow,
+.custom-prev-arrow {
+    font-size: 50px; /* Adjust the font size to make the arrows bigger */
+    color: #000; /* Optional: Change the color of the arrows */
 }

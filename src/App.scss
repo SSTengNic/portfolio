@@ -1,0 +1,20 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior:smooth ;
+    scroll-snap-align: "start";
+
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+
+}
+
+body {
+    scroll-behavior: smooth;
+    scroll-snap-align: "start";
+}
+
+section { 
+    height: 20vh;
+}

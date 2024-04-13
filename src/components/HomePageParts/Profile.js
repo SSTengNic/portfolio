@@ -1,6 +1,5 @@
-import { Container, Text, Box, Avatar } from "@chakra-ui/react";
+import { Container, Text, Avatar } from "@chakra-ui/react";
 import profilePic from "../../pictures/new_profile_pic.jpg";
-
 import React from "react";
 
 function Profile() {
@@ -13,8 +12,8 @@ function Profile() {
                 src={profilePic}
             />
 
-            <Text fontSize="3xl" style={{ textDecoration: "underline" }}>
-                Nicholas Teng
+            <Text fontSize="3xl" mt={7} mb={2}>
+                <b>Nicholas Teng</b>
             </Text>
             <Text fontSize="xl" mb={3}>
                 Hi there! I'm a Computer Science and Design (CSD) student from
