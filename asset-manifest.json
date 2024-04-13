@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.ecc928d5.css",
-    "main.js": "/portfolio/static/js/main.429c0746.js",
+    "main.css": "/portfolio/static/css/main.adb67f9f.css",
+    "main.js": "/portfolio/static/js/main.c17c54a1.js",
     "static/js/787.a8a21f2e.chunk.js": "/portfolio/static/js/787.a8a21f2e.chunk.js",
     "static/media/School_Projects_Card_Front_Page.jpg": "/portfolio/static/media/School_Projects_Card_Front_Page.a360c148ba3958ae7274.jpg",
     "static/media/FullStack Certificate.png": "/portfolio/static/media/FullStack Certificate.24bd8c4f4432825760fa.png",
@@ -21,12 +21,12 @@
     "static/media/slick.ttf": "/portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/portfolio/index.html",
-    "main.ecc928d5.css.map": "/portfolio/static/css/main.ecc928d5.css.map",
-    "main.429c0746.js.map": "/portfolio/static/js/main.429c0746.js.map",
+    "main.adb67f9f.css.map": "/portfolio/static/css/main.adb67f9f.css.map",
+    "main.c17c54a1.js.map": "/portfolio/static/js/main.c17c54a1.js.map",
     "787.a8a21f2e.chunk.js.map": "/portfolio/static/js/787.a8a21f2e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecc928d5.css",
-    "static/js/main.429c0746.js"
+    "static/css/main.adb67f9f.css",
+    "static/js/main.c17c54a1.js"
   ]
 }
