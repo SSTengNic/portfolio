@@ -33,7 +33,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import React from "react";
 import BloglistPic from "../../pictures/WebAppPage_Thumbnails/Bloglist_Page.png";
 
-function Startups() {
+function WebApps() {
     const {
         isOpen: isBlogListOpen,
         onOpen: onBlogListOpen,
@@ -322,4 +322,4 @@ function Startups() {
     );
 }
 
-export default Startups;
+export default WebApps;

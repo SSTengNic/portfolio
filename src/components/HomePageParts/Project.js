@@ -15,6 +15,7 @@ import webAppPic from "../../pictures/Web_Application_Pic.jpeg";
 import MLPic from "../../pictures/Machine_Learning_Card_Picture.png";
 import PersonalProjectPic from "../../pictures/School_Projects_Card_Front_Page.jpg";
 import CertsPic from "../../pictures/Certs_pic.jpg";
+import InternshipPic from "../../pictures/InternshipPic.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -72,6 +73,14 @@ const Project = () => {
                         heading="Certificates"
                         description="Check out my certificates!"
                         link="/Certificates"
+                    />
+                </div>
+                <div>
+                    <CardComponent
+                        image={InternshipPic}
+                        heading="Internships"
+                        description="Check out the Internships that I have completed!"
+                        link="/Internships"
                     />
                 </div>
             </Slider>

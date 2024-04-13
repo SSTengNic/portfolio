@@ -22,3 +22,17 @@ code {
     font-size: 50px; /* Adjust the font size to make the arrows bigger */
     color: #000; /* Optional: Change the color of the arrows */
 }
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+.container {
+  scroll-snap-align: center;
+  scroll-behavior: smooth;}
+
+/* Stop snapping once the container is fully scrolled */
+.container:last-child {
+  scroll-snap-type: y mandatory;
+}

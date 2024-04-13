@@ -37,10 +37,10 @@ const milestones = [
         icon: FaSeedling,
         description: [
             "I ran a startup during the aftermath of COVID-19, organizing supper catering services for my university's student body. Amidst the challenges posed by the pandemic, I successfully reinstated original catering arrangements and negotiated new deals with caterers.",
-            "To learn more about our journey, click the link below!",
         ],
         date: "Feb 2022 - Mar 2023",
-        link: "",
+        link: "/SchoolProjects",
+        tabId: "section1",
     },
     {
         id: 3,
@@ -49,10 +49,10 @@ const milestones = [
         icon: FaSeedling,
         description: [
             `I co-founded a startup that revolutionized promotion claiming through gamification. My key role involved securing partnerships with diverse businesses, convincing them to share exclusive promotions on our web application. Additionally, I served as a software testing engineer, rigorously testing new features using Cypress.`,
-            " Discover more about our journey by clicking the link below!",
         ],
         date: "Apr 2023 - Aug 2023",
-        link: "",
+        link: "/SchoolProjects",
+        tabId: "section1",
     },
     {
         id: 4,
@@ -64,7 +64,8 @@ const milestones = [
             "Moreover, I undertook the responsibility of maintaining and debugging existing RPA code, ensuring seamless workflows for our clients. I contributed to the optimization of processes, resulting in tangible improvements in operational efficiency.",
         ],
         date: "Aug 2023 - Dec 2023",
-        link: "",
+        link: "/Internships",
+        tabId: "section3",
     },
     {
         id: 5,

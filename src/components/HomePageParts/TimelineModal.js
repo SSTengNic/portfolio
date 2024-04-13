@@ -8,7 +8,11 @@ import {
     ModalBody,
     ModalFooter,
     Button,
+    IconButton,
 } from "@chakra-ui/react";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
 
 const TimelineModal = ({ isOpen, onClose, milestone }) => {
     return (
@@ -24,6 +28,20 @@ const TimelineModal = ({ isOpen, onClose, milestone }) => {
                             {paragraph}
                         </p>
                     ))}
+                    {/* Render the link button conditionally */}
+                    {milestone.link && (
+                        <Link to={`${milestone.link}`}>
+                            <p style={{ marginTop: "20px" }}>
+                                <u>Link to more information! </u>
+                                <IconButton
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    icon={<FaExternalLinkAlt />}
+                                    ml={2}
+                                />
+                            </p>
+                        </Link>
+                    )}
                 </ModalBody>
                 <ModalFooter>
                     <Button colorScheme="blue" mr={3} onClick={onClose}>

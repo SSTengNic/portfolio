@@ -7,7 +7,7 @@ import {
     useColorMode,
     Box,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useInViewport } from "react-in-viewport";
 import { Text } from "@chakra-ui/react";
 
@@ -46,6 +46,16 @@ function HomePage() {
         dark: "rgba(0,0, 0, 0.2)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
     };
 
+    useEffect(() => {
+        const sections = [ref1, ref2, ref3, ref4, ref5, ref6];
+        console.log("testing");
+        sections.forEach((section) => {
+            section.current.style.scrollSnapType = "y mandatory";
+            section.current.style.scrollBehavior = "smooth";
+            section.current.style.scrollSnapAlign = "start";
+        });
+    }, []);
+
     return (
         <VStack p={5}>
             <Container
@@ -62,7 +72,8 @@ function HomePage() {
                 initial="hidden"
                 animate={inViewport1 ? "visible" : "hidden"}
                 variants={fadeInVariants}
-                whileHover="whileHover" // Add this attribute to enable whileHover animation
+                whileHover="whileHover"
+                style={{ overflowY: "auto" }} // Add this attribute to enable whileHover animation
             >
                 <Header />
             </Container>
@@ -81,7 +92,8 @@ function HomePage() {
                 initial="hidden"
                 animate={inViewport2 ? "visible" : "hidden"}
                 variants={fadeInVariants}
-                whileHover="whileHover" // Adjust the scale value as needed            >
+                whileHover="whileHover"
+                style={{ overflowY: "auto" }} // Adjust the scale value as needed            >
             >
                 <Profile />
                 <Box position="relative" padding="10">
@@ -109,6 +121,7 @@ function HomePage() {
                 animate={inViewport3 ? "visible" : "hidden"}
                 variants={fadeInVariants}
                 whileHover="whileHover" // Add this attribute to enable whileHover animation
+                style={{ overflowY: "auto" }}
             >
                 <Project />
             </Container>
@@ -128,6 +141,7 @@ function HomePage() {
                 animate={inViewport4 ? "visible" : "hidden"}
                 variants={fadeInVariants}
                 whileHover="whileHover" // Add this attribute to enable whileHover animation
+                style={{ overflowY: "auto" }}
             >
                 <SoftSkillSHardSkills />
             </Container>
@@ -148,6 +162,7 @@ function HomePage() {
                 variants={fadeInVariants}
                 whileHover="whileHover" // Add this attribute to enable whileHover animation
                 style={{ position: "relative" }} // Add this style to prevent overlap with absolute positioned elements
+                style={{ overflowY: "auto" }}
             >
                 <TechStackAndJourney />
             </Container>
@@ -167,6 +182,7 @@ function HomePage() {
                 animate={inViewport6 ? "visible" : "hidden"}
                 variants={fadeInVariants}
                 whileHover="whileHover" // Add this attribute to enable whileHover animation
+                style={{ overflowY: "auto" }}
             >
                 <ContactMe />
             </Container>
