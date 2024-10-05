@@ -36,3 +36,7 @@ html {
 .container:last-child {
   scroll-snap-type: y mandatory;
 }
+
+.container:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.8); /* Increase glow effect on hover */
+}
