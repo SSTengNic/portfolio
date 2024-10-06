@@ -73,10 +73,22 @@ const milestones = [
         title: "Entrepreneurship Program at UC Berkeley Extension",
         icon: FaGraduationCap,
         description: [
-            `I enrolled in the Entrepreneurship Program at the University of California, Berkeley.`,
+            `I enrolled in the Entrepreneurship Program at the University of California, Berkeley.  \n`,
             `This immersive exchange program has enriched my entrepreneurial skill set, honing my abilities in business negotiation and conducting market research tailored for entrepreneurs.`,
         ],
         date: "Jan 2024 - May 2024",
+    },
+    {
+        id: 6,
+        categories: ["Internship", ""],
+        title: "IT Intern at 1TCC",
+        icon: FaBriefcase,
+        description: [
+            `I interned at a silicon valley fintech startup named 1TCC. \n`,
+            `As an IT Solutions Developer intern, I worked closely with my supervisor and fellow team to build internal scripts and tools that helped 1TCC's finance department consolidate important stock data to use for the business.`,
+        ],
+        date: "May 2024 - Aug 2024",
+        link: "/Internships",
     },
 ];
 
