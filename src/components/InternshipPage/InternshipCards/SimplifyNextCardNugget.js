@@ -21,7 +21,6 @@ import {
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import React, { Component } from "react";
-import ReactPlayer from "react-player";
 
 const SimplifyNextCardNugget = ({
     onModalOpen,
