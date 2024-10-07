@@ -3,9 +3,9 @@ import HomeHeader from "../Shared/HomeHeader";
 import { VStack } from "@chakra-ui/react";
 
 import { useColorMode, Container } from "@chakra-ui/react";
-import SchoolProjects from "./SchoolProjects";
-import Startups from "./Startups";
-import Internships from "./Internships";
+import SchoolProjectBody from "../SchoolProjectPage/SchoolProjectBody";
+import StartupBody from "../StartupPage/StartupBody";
+
 const backgroundColors = {
     light: "rgba(254, 255, 238, 0.4)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
     dark: "rgba(0,0, 0, 0.2)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
@@ -14,7 +14,7 @@ function OPPage() {
     const { colorMode } = useColorMode();
     return (
         <VStack p={5}>
-            <HomeHeader HomeHeaderText={"Startups, Internships & Projects"} />
+            <HomeHeader HomeHeaderText={"Startups & Projects"} />
 
             <Container
                 id="section1"
@@ -26,7 +26,7 @@ function OPPage() {
                 w="100%"
                 mb={4}
             >
-                <Startups />
+                <StartupBody />
             </Container>
             <Container
                 id="section2"
@@ -38,7 +38,7 @@ function OPPage() {
                 maxW="600px"
                 mb={4}
             >
-                <SchoolProjects />
+                <SchoolProjectBody />
             </Container>
         </VStack>
     );

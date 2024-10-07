@@ -14,7 +14,7 @@ import React, { Component } from "react";
 import SimplifyNextCardNugget from "./InternshipCards/SimplifyNextCardNugget";
 import TCCCardNugget from "./InternshipCards/TCCCardNugget";
 
-import ObjectstoUse from "./InternshipCards/InternshipWriteup";
+import ObjectsToUse from "./InternshipCards/InternshipWriteup";
 
 import UiPathPic from "../../pictures/UiPath robot.jpg";
 import TCCPic from "../../pictures/Internship_Thumbnails/1TCC_logo.jpg";
@@ -50,32 +50,32 @@ function InternshipProjects() {
                             onModalClose={onSimplifyNextClose}
                             thumbnailPic={UiPathPic}
                             cardHeader={
-                                ObjectstoUse.SimplifyNextObject.cardHeader
+                                ObjectsToUse.SimplifyNextObject.cardHeader
                             }
                             modalHeader={
-                                ObjectstoUse.SimplifyNextObject.modalHeader
+                                ObjectsToUse.SimplifyNextObject.modalHeader
                             }
                             modalBodyHeading1={
-                                ObjectstoUse.SimplifyNextObject
+                                ObjectsToUse.SimplifyNextObject
                                     .modalBodyHeading1
                             }
                             modalBodyHeading2={
-                                ObjectstoUse.SimplifyNextObject
+                                ObjectsToUse.SimplifyNextObject
                                     .modalBodyHeading2
                             }
                             modalBodyVideo={
-                                ObjectstoUse.SimplifyNextObject.modalBodyVideo
+                                ObjectsToUse.SimplifyNextObject.modalBodyVideo
                             }
                             modalBodyDescription1={
-                                ObjectstoUse.SimplifyNextObject
+                                ObjectsToUse.SimplifyNextObject
                                     .modalBodyDescription1
                             }
                             modalBodyDescription2={
-                                ObjectstoUse.SimplifyNextObject
+                                ObjectsToUse.SimplifyNextObject
                                     .modalBodyDescription2
                             }
                             modalBodyDescription3={
-                                ObjectstoUse.SimplifyNextObject
+                                ObjectsToUse.SimplifyNextObject
                                     .modalBodyDescription3
                             }
                         />
@@ -84,31 +84,31 @@ function InternshipProjects() {
                         {" "}
                         <TCCCardNugget
                             isModalOpen={isTCCModalOpen}
-                            modalHeader={ObjectstoUse.TCCObject.modalHeader}
+                            modalHeader={ObjectsToUse.TCCObject.modalHeader}
                             onModalOpen={onTCCOpen}
                             onModalClose={onTCCClose}
-                            cardHeader={ObjectstoUse.TCCObject.cardHeader}
+                            cardHeader={ObjectsToUse.TCCObject.cardHeader}
                             thumbnailPic={TCCPic}
                             modalBodyHeading1={
-                                ObjectstoUse.TCCObject.modalBodyHeading1
+                                ObjectsToUse.TCCObject.modalBodyHeading1
                             }
                             modalBodyHeading2={
-                                ObjectstoUse.TCCObject.modalBodyHeading2
+                                ObjectsToUse.TCCObject.modalBodyHeading2
                             }
                             modalBodyHeading3={
-                                ObjectstoUse.TCCObject.modalBodyHeading3
+                                ObjectsToUse.TCCObject.modalBodyHeading3
                             }
                             modalBodyVideo={
-                                ObjectstoUse.TCCObject.modalBodyVideo
+                                ObjectsToUse.TCCObject.modalBodyVideo
                             }
                             modalBodyDescription1={
-                                ObjectstoUse.TCCObject.modalBodyDescription1
+                                ObjectsToUse.TCCObject.modalBodyDescription1
                             }
                             modalBodyDescription2={
-                                ObjectstoUse.TCCObject.modalBodyDescription2
+                                ObjectsToUse.TCCObject.modalBodyDescription2
                             }
                             modalBodyDescription3={
-                                ObjectstoUse.TCCObject.modalBodyDescription3
+                                ObjectsToUse.TCCObject.modalBodyDescription3
                             }
                         />
                     </TabPanel>

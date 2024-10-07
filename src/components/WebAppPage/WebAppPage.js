@@ -1,7 +1,7 @@
 import React from "react";
 import HomeHeader from "../Shared/HomeHeader";
 import { VStack } from "@chakra-ui/react";
-import WebApps from "./WebAppProjects";
+import WebAppBody from "./WebAppBody";
 import { useColorMode, Container } from "@chakra-ui/react";
 
 const backgroundColors = {
@@ -24,7 +24,7 @@ function WebAppPage() {
                 w="100%"
                 mb={4}
             >
-                <WebApps />
+                <WebAppBody />
             </Container>
         </VStack>
     );

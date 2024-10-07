@@ -79,7 +79,6 @@ const HungrysiaObject = {
                                             orders and payments to the
                                             caterers.With it, the caterers could
                                             understand complex orders with ease.`,
-    modalBodyHeading4: ``,
     modalBodyHeading5: ``,
     modalBodyDescription4: `Eventually, I entrusted the
                                             management of Hungrysia@SUTD to a
