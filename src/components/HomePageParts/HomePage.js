@@ -7,17 +7,21 @@ import {
     useColorMode,
     Box,
 } from "@chakra-ui/react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useInViewport } from "react-in-viewport";
 import { Text } from "@chakra-ui/react";
 
-import Header from "./Header";
+import NavBar from "./NavBar";
 import Profile from "./Profile";
 import Project from "./Project";
 import ContactMe from "./ContactMe";
 import SoftSkillSHardSkills from "./SoftSkillsHardSkills";
 import TechStackAndJourney from "./TechStackAndJourney";
 import Tech from "../canvas/Tech";
+import TechStack from "./TechStack";
+import SectionContainer from "../Shared/SectionContainer";
+import ScrollProgressBar from "./ScrollProgressBar";
+import AboutMe from "./AboutMe";
 
 function HomePage() {
     const { colorMode } = useColorMode();
@@ -27,166 +31,122 @@ function HomePage() {
     const ref4 = useRef(null);
     const ref5 = useRef(null);
     const ref6 = useRef(null);
+    const ref7 = useRef(null);
 
     const { inViewport: inViewport1 } = useInViewport(ref1, { threshold: 0.7 });
-    const { inViewport: inViewport2 } = useInViewport(ref2, { threshold: 0.2 });
-    const { inViewport: inViewport3 } = useInViewport(ref3, { threshold: 0.4 });
+    const { inViewport: inViewport2 } = useInViewport(ref2, { threshold: 0.7 });
+    const { inViewport: inViewport3 } = useInViewport(ref3, { threshold: 0.7 });
     const { inViewport: inViewport4 } = useInViewport(ref4, { threshold: 0.7 });
-    const { inViewport: inViewport5 } = useInViewport(ref5, { threshold: 0.2 });
+    const { inViewport: inViewport5 } = useInViewport(ref5, { threshold: 0.7 });
     const { inViewport: inViewport6 } = useInViewport(ref6, { threshold: 0.7 });
+    const { inViewport: inViewport7 } = useInViewport(ref7, { threshold: 0.7 });
 
     const fadeInVariants = {
-        hidden: { opacity: 0.3 },
-        visible: { opacity: 1 },
-        whileHover: { scale: 1.02 },
+        hidden: { opacity: 0 }, // Start completely transparent
+        visible: { opacity: 1, transition: { duration: 0.5 } }, // Fade in
     };
 
-    const backgroundColors = {
-        light: "rgba(254, 255, 238, 0.4)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
-        dark: "rgba(0,0, 0, 0.2)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
-    };
+    const backgroundColor = "#fffbe7";
+
+    const [hasAppeared1, setHasAppeared1] = useState(false);
+    const [hasAppeared2, setHasAppeared2] = useState(false);
+    const [hasAppeared3, setHasAppeared3] = useState(false);
+    const [hasAppeared4, setHasAppeared4] = useState(false);
+    const [hasAppeared5, setHasAppeared5] = useState(false);
+    const [hasAppeared6, setHasAppeared6] = useState(false);
+    const [hasAppeared7, setHasAppeared7] = useState(false);
 
     useEffect(() => {
-        const sections = [ref1, ref2, ref3, ref4, ref5, ref6];
-        console.log("testing");
-        sections.forEach((section) => {
-            section.current.style.scrollSnapType = "y mandatory";
-            section.current.style.scrollBehavior = "smooth";
-            section.current.style.scrollSnapAlign = "start";
-        });
-    }, []);
+        if (inViewport1 && !hasAppeared1) setHasAppeared1(true);
+        if (inViewport2 && !hasAppeared2) setHasAppeared2(true);
+        if (inViewport3 && !hasAppeared3) setHasAppeared3(true);
+        if (inViewport4 && !hasAppeared4) setHasAppeared4(true);
+        if (inViewport5 && !hasAppeared5) setHasAppeared5(true);
+        if (inViewport6 && !hasAppeared6) setHasAppeared6(true);
+    }, [
+        inViewport1,
+        inViewport2,
+        inViewport3,
+        inViewport4,
+        inViewport5,
+        inViewport6,
+    ]);
 
     return (
-        <VStack p={5}>
-            <Container
-                as={motion.div}
-                id="section1"
-                ref={ref1}
-                backgroundColor={backgroundColors[colorMode]}
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                w="100%"
-                maxW="600px"
-                mb={4}
-                initial="hidden"
-                animate={inViewport1 ? "visible" : "hidden"}
-                variants={fadeInVariants}
-                whileHover="whileHover"
-                style={{ overflowY: "auto" }} // Add this attribute to enable whileHover animation
+        <>
+            <NavBar />
+            <ScrollProgressBar />
+            <VStack
+                p="8rem"
+                width="100vw"
+                height="100%"
+                spacing="8rem"
+                align="stretch"
+                bg={backgroundColor}
             >
-                <Header />
-            </Container>
+                <SectionContainer
+                    id="section1"
+                    refProp={ref1}
+                    animate={hasAppeared1 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <Profile />
+                </SectionContainer>
+                <SectionContainer
+                    id="section2"
+                    refProp={ref2}
+                    animate={hasAppeared2 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <AboutMe />
+                </SectionContainer>
 
-            <Container
-                as={motion.div}
-                id="section2"
-                ref={ref2}
-                backgroundColor={backgroundColors[colorMode]}
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                w="100%"
-                maxW="600px"
-                mb={4}
-                initial="hidden"
-                animate={inViewport2 ? "visible" : "hidden"}
-                variants={fadeInVariants}
-                whileHover="whileHover"
-                style={{ overflowY: "auto" }} // Adjust the scale value as needed            >
-            >
-                <Profile />
-                <Box position="relative" padding="10">
-                    <Divider />
-                    <AbsoluteCenter bg={null} px="4"></AbsoluteCenter>
-                </Box>
-                <Text textAlign="center" fontSize="3xl">
-                    <b>Tech Stack </b>
-                </Text>
-                <Tech />
-            </Container>
+                <SectionContainer
+                    id="section3"
+                    refProp={ref3}
+                    animate={hasAppeared3 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <TechStack />
+                </SectionContainer>
 
-            <Container
-                as={motion.div}
-                id="section3"
-                ref={ref3}
-                backgroundColor={backgroundColors[colorMode]}
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                w="100%"
-                maxW="600px"
-                mb={4}
-                initial="hidden"
-                animate={inViewport3 ? "visible" : "hidden"}
-                variants={fadeInVariants}
-                whileHover="whileHover" // Add this attribute to enable whileHover animation
-                style={{ overflowY: "auto" }}
-            >
-                <Project />
-            </Container>
+                <SectionContainer
+                    id="section4"
+                    refProp={ref4}
+                    animate={hasAppeared4 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <Project />
+                </SectionContainer>
 
-            <Container
-                as={motion.div}
-                id="section4"
-                ref={ref4}
-                backgroundColor={backgroundColors[colorMode]}
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                w="100%"
-                maxW="600px"
-                mb={4}
-                initial="hidden"
-                animate={inViewport4 ? "visible" : "hidden"}
-                variants={fadeInVariants}
-                whileHover="whileHover" // Add this attribute to enable whileHover animation
-                style={{ overflowY: "auto" }}
-            >
-                <SoftSkillSHardSkills />
-            </Container>
+                {/* <SectionContainer
+                    id="section5"
+                    refProp={ref5}
+                    animate={hasAppeared5 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <SoftSkillSHardSkills />
+                </SectionContainer> */}
 
-            <Container
-                as={motion.div}
-                id="section5"
-                ref={ref5}
-                backgroundColor={backgroundColors[colorMode]}
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                w="100%"
-                maxW="600px"
-                mb={5}
-                initial="hidden"
-                animate={inViewport5 ? "visible" : "hidden"}
-                variants={fadeInVariants}
-                whileHover="whileHover" // Add this attribute to enable whileHover animation
-                style={{ position: "relative" }} // Add this style to prevent overlap with absolute positioned elements
-                style={{ overflowY: "auto" }}
-            >
-                <TechStackAndJourney />
-            </Container>
+                <SectionContainer
+                    id="section5"
+                    refProp={ref5}
+                    animate={hasAppeared5 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <TechStackAndJourney />
+                </SectionContainer>
 
-            <Container
-                as={motion.div}
-                id="section6"
-                ref={ref6}
-                backgroundColor={backgroundColors[colorMode]}
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                w="100%"
-                maxW="600px"
-                mb={4}
-                initial="hidden"
-                animate={inViewport6 ? "visible" : "hidden"}
-                variants={fadeInVariants}
-                whileHover="whileHover" // Add this attribute to enable whileHover animation
-                style={{ overflowY: "auto" }}
-            >
-                <ContactMe />
-            </Container>
-        </VStack>
+                <SectionContainer
+                    id="section6"
+                    refProp={ref6}
+                    animate={hasAppeared6 ? "visible" : "hidden"}
+                    variants={fadeInVariants}
+                >
+                    <ContactMe />
+                </SectionContainer>
+            </VStack>
+        </>
     );
 }
 
