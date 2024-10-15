@@ -1,7 +1,7 @@
 const RCKObject = {
     heading: ` Remote Controlled Koi (RCK)`,
     modalHeader: `Remote Controlled Koi (RCK)`,
-    modalBodyHeading1: `What is an RCK?`,
+    modalBodyHeading1: `What is the RCK?`,
     modalBodyHeading2: `Roles and Responsibilities`,
     modalBodyHeading3: `Results`,
     modalBodyHeading4: ``,
@@ -13,7 +13,7 @@ const RCKObject = {
                                 develop an engaging solution for pond
                                 maintenance. Our innovative creation not only
                                 streamlined the cleaning process but also
-                                fostered social interactions.{}`,
+                                fostered social interactions.`,
     modalBodyDescription2: `In this endeavor, my responsibilities
                                 encompassed team leadership and overseeing the
                                 fabrication of a functional 3D-printed conveyor

@@ -9,10 +9,18 @@ import {
     VStack,
     Flex,
     Icon,
-    useColorModeValue,
+    ListItem,
+    UnorderedList,
+    Avatar,
 } from "@chakra-ui/react";
 import { FaGraduationCap, FaSeedling, FaBriefcase } from "react-icons/fa6";
+import SUTDLogo from "../../pictures/MilestonePics/SUTD_Logo.png";
+import SimplifyNextLogo from "../../pictures/MilestonePics/SimplifyNextLogo.png";
 
+import HungrySiaLogo from "../../pictures/HungrySiaLogo.jpg";
+import PinchPromoLogo from "../../pictures/MilestonePics/PinchPromoLogo2.png";
+import UCBLogo from "../../pictures/MilestonePics/UCB_logo.png";
+import TCCLogo from "../../pictures/MilestonePics/1TCCLogo.jpg";
 import { IconType } from "react-icons";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -20,13 +28,13 @@ import TimelineModal from "./TimelineModal";
 const milestones = [
     {
         id: 1,
-        title: "Computer Science and Design (CSD) and Masters in Entreprenership",
+        title: "Computer Science and Design (CSD) and Masters in Technological Entrepreneurship",
         categories: ["University Scholarship"],
-        icon: FaGraduationCap,
+        icon: SUTDLogo,
         description: [
-            "I was honored to be awarded the prestigious SUTD Technology and Entrepreneurship Program (STEP) Scholarship in 2021.",
-            "Currently, I am immersed in a dual-degree program, pursuing a Bachelor's degree in Computer Science and Design (CSD) alongside a Masters in Entrepreneurship.",
-            "I am on course to complete my studies and graduate in May 2026.",
+            "Awarded the prestigious SUTD Technology and Entrepreneurship Program (STEP) Scholarship in 2021.",
+            "Currently pursuing a Bachelor's degree in CSD alongside a Masters in Technological Entrepreneurship.",
+            "On course to complete my studies and graduate in May 2026.",
         ],
         date: "Sep 2021 - Present",
     },
@@ -34,58 +42,60 @@ const milestones = [
         id: 2,
         categories: ["Startup"],
         title: "President of Hungrysia@SUTD",
-        icon: FaSeedling,
+        icon: HungrySiaLogo,
         description: [
-            "I ran a startup during the aftermath of COVID-19, organizing supper catering services for my university's student body. Amidst the challenges posed by the pandemic, I successfully reinstated original catering arrangements and negotiated new deals with caterers.",
+            "Organized supper catering services on every alternate day for SUTD's student body during the aftermath of COVID-19.",
+            "Amidst the pandemic challenges, successfully reinstated original catering arrangements and secured partnerships with 3 new caterers.",
         ],
         date: "Feb 2022 - Mar 2023",
         link: "/SchoolProjects",
-        tabId: "section1",
     },
     {
         id: 3,
         categories: ["Startup"],
         title: "Cofounder of PinchPromo",
-        icon: FaSeedling,
+        icon: PinchPromoLogo,
         description: [
-            `I co-founded a startup that revolutionized promotion claiming through gamification. My key role involved securing partnerships with diverse businesses, convincing them to share exclusive promotions on our web application. Additionally, I served as a software testing engineer, rigorously testing new features using Cypress.`,
+            "Co-founded a startup that revolutionized promotion claiming through gamification.",
+            "Successfully secured partnerships with over 5 businesses, convincing them to share exclusive promotions on our web application.",
+            "Served as the software testing engineer, writing E2E tests using Cypress.",
         ],
         date: "Apr 2023 - Aug 2023",
         link: "/SchoolProjects",
-        tabId: "section1",
     },
     {
         id: 4,
         categories: ["Internship"],
         title: "Technology Analyst Intern at SimplifyNext",
-        icon: FaBriefcase,
+        icon: SimplifyNextLogo,
         description: [
-            `As a Technology Analyst Intern at SimplifyNext, I developed Robotic Process Automations (RPAs) using UiPath aimed at streamlining crucial tasks for our clients. I developed RPAs to automate data input processes into the client's backend systems, enhancing efficiency and accuracy.`,
-            "Moreover, I undertook the responsibility of maintaining and debugging existing RPA code, ensuring seamless workflows for our clients. I contributed to the optimization of processes, resulting in tangible improvements in operational efficiency.",
+            "Developed Robotic Process Automations (RPA) to automate data input processes into the client's database Excel systems, enhancing efficiency and accuracy.",
+            "Optimized a large RPA client's processes by implementing specific conditional logic, which streamlined workflows and reduced process time by 15%.",
+            "Undertook the responsibility of maintaining and debugging existing RPA code, ensuring seamless workflows for our clients.",
         ],
         date: "Aug 2023 - Dec 2023",
         link: "/Internships",
-        tabId: "section3",
     },
     {
         id: 5,
-        categories: ["Academics", ""],
+        categories: ["Academics"],
         title: "Entrepreneurship Program at UC Berkeley Extension",
-        icon: FaGraduationCap,
+        icon: UCBLogo,
         description: [
-            `I enrolled in the Entrepreneurship Program at the University of California, Berkeley.  \n`,
-            `This immersive exchange program has enriched my entrepreneurial skill set, honing my abilities in business negotiation and conducting market research tailored for entrepreneurs.`,
+            `Enrolled in the Entrepreneurship Program at the University of California, Berkeley.  \n`,
+            `Enriched my entrepreneurial skill set, honing my abilities in business negotiation and conducting market research tailored for entrepreneurs.`,
         ],
         date: "Jan 2024 - May 2024",
     },
     {
         id: 6,
-        categories: ["Internship", ""],
-        title: "IT Intern at 1TCC",
-        icon: FaBriefcase,
+        categories: ["Internship"],
+        title: "IT Solutions Developer Intern at 1TCC",
+        icon: TCCLogo,
         description: [
-            `I interned at a silicon valley fintech startup named 1TCC. \n`,
-            `As an IT Solutions Developer intern, I worked closely with my supervisor and fellow team to build internal scripts and tools that helped 1TCC's finance department consolidate important stock data to use for the business.`,
+            "Designed and implemented an AWS DynamoDB structure to store financial data for over 300 public tickers with 12 data categories.",
+            "Automated the daily updates of DynamoDB structures using Lambda functions to populate data via API calls. \n",
+            "Developed a prototype static internal tool into a full-stack web application using Dash, Flask, and MySQL. Deployed it remotely via AWS Elastic Beanstalk and RDS.",
         ],
         date: "May 2024 - Aug 2024",
         link: "/Internships",
@@ -115,7 +125,7 @@ interface MilestoneProps {
 
 const Milestone = ({ milestone }: MilestoneProps) => {
     const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.8 });
+    const [ref, inView] = useInView({ threshold: 0.5 });
 
     // Animate milestone when it comes into view
     if (inView) {
@@ -157,32 +167,39 @@ const MilestoneCard = ({ milestone }) => {
         <>
             <HStack
                 p={{ base: 3, sm: 6 }}
-                bg={useColorModeValue("gray.100", "gray.800")}
+                bg="transparent"
                 spacing={5}
                 rounded="lg"
                 alignItems="center"
                 pos="relative"
-                _before={{
-                    content: `""`,
-                    w: "0",
-                    h: "0",
-                    borderColor: `transparent ${useColorModeValue(
-                        "#edf2f6",
-                        "#1a202c"
-                    )} transparent`,
-                    borderStyle: "solid",
-                    borderWidth: "15px 15px 15px 0",
-                    position: "absolute",
-                    left: "-15px",
-                    display: "block",
-                }}
+                // _before={{
+                //     content: `""`,
+                //     w: "0",
+                //     h: "0",
+                //     borderColor: `transparent ${useColorModeValue(
+                //         "#ddf0ff",
+                //         "#ddf0ff"
+                //     )} transparent`,
+                //     borderStyle: "solid",
+                //     borderWidth: "15px 15px 15px 0",
+                //     position: "absolute",
+                //     left: "-15px",
+                //     display: "block",
+                // }}
             >
-                <Icon as={icon} w={12} h={12} color="white" />
+                <Avatar
+                    borderWidth="2px" // Set the border width here
+                    borderColor="black"
+                    src={icon}
+                    size="lg"
+                    objectFit="cover"
+                    bg="white"
+                />
                 <Box>
                     <HStack spacing={2} mb={1}>
                         {categories.map((cat) => (
                             <Text fontSize="sm" key={cat}>
-                                {cat}
+                                {cat}, {date}
                             </Text>
                         ))}
                     </HStack>
@@ -191,7 +208,7 @@ const MilestoneCard = ({ milestone }) => {
                             as={Link}
                             _hover={{ color: "teal.400" }}
                             fontSize="2xl"
-                            lineHeight={1.2}
+                            lineHeight={1.1}
                             fontWeight="bold"
                             w="100%"
                             onClick={handleOpenModal} // Open modal on click
@@ -199,11 +216,14 @@ const MilestoneCard = ({ milestone }) => {
                         >
                             {title}
                         </chakra.h1>
-                        <Text fontSize="md" noOfLines={2}>
-                            {description}
+                        <Text fontSize="md" noOfLines={10}>
+                            <UnorderedList spacing={3}>
+                                {description.map((point, index) => (
+                                    <ListItem key={index}>{point}</ListItem>
+                                ))}
+                            </UnorderedList>
                         </Text>
                     </VStack>
-                    <Text fontSize="sm">{date}</Text>
                 </Box>
             </HStack>
             <TimelineModal
@@ -217,13 +237,13 @@ const MilestoneCard = ({ milestone }) => {
 
 const LineWithDot = () => {
     return (
-        <Flex pos="relative" alignItems="center" mr="40px">
+        <Flex pos="relative" alignItems="center">
             <chakra.span
                 position="absolute"
                 left="50%"
                 height="calc(100% + 10px)"
                 border="1px solid"
-                borderColor={useColorModeValue("gray.200", "gray.700")}
+                borderColor="black"
                 top="0px"
             ></chakra.span>
             <Box pos="relative" p="10px">
@@ -240,9 +260,9 @@ const LineWithDot = () => {
                     backgroundPosition="center center"
                     backgroundColor="rgb(255, 255, 255)"
                     borderRadius="100px"
-                    border="3px solid rgb(4, 180, 180)"
+                    border="3px solid #1983ff"
                     backgroundImage="none"
-                    opacity={1}
+                    opacity={5}
                 ></Box>
             </Box>
         </Flex>

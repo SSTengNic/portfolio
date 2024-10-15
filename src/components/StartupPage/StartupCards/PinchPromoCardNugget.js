@@ -1,12 +1,9 @@
 import {
     Text,
-    Card,
-    CardBody,
     Image,
     Stack,
     Heading,
     IconButton,
-    Button,
     Link,
 } from "@chakra-ui/react";
 
@@ -18,12 +15,11 @@ import {
     ModalBody,
     ModalCloseButton,
     Box,
-    AspectRatio,
 } from "@chakra-ui/react";
+import ModalCardComponent from "../../Shared/ModalCardComponent";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import React from "react";
-
 const PinchPromoCardNugget = ({
     heading,
     onModalOpen,
@@ -43,68 +39,68 @@ const PinchPromoCardNugget = ({
     modalBodyVideo,
 }) => {
     return (
-        <Card maxW="sm" mx="auto">
-            <CardBody>
-                <Image
-                    src={thumbnailPic}
-                    alt="PinchPromo Thumbnail"
-                    borderRadius="20px"
-                />
-                <Stack mt="6" spacing="3">
-                    <Heading size="md">{heading}</Heading>
-                    <Button onClick={onModalOpen}>More</Button>
-                    <Modal
-                        isCentered
-                        isOpen={isModalOpen}
-                        onClose={onModalClose}
-                        motionPreset="slideInBottom"
-                        size="5xl"
-                    >
-                        <ModalOverlay />
-                        <ModalContent>
-                            <ModalHeader>{modalHeader}</ModalHeader>
-                            <ModalCloseButton />
-                            <ModalBody>
-                                <Box>
-                                    <Heading>{modalBodyHeading1}</Heading>
-                                    <Text fontSize="lg" mb={4}>
-                                        {modalBodyDescription1}
-                                    </Text>
+        <ModalCardComponent
+            onModalOpen={onModalOpen}
+            thumbnailPic={thumbnailPic}
+            heading={heading}
+        >
+            <Text textAlign="left" ml={2} mb={3} spacing="">
+                Seeing the need for more <b>student-focused deals</b>, my
+                friends and I created PinchPromo—a web app that brings exclusive
+                student discounts💰 to life through gamification!😎 Click here
+                to learn more.
+            </Text>
 
-                                    <Heading>{modalBodyHeading2}</Heading>
-                                    <Text fontSize="lg" mb={4}>
-                                        {modalBodyDescription2}
-                                    </Text>
-                                    <Text fontSize="lg" mb={4}>
-                                        {modalBodyDescription3}
-                                    </Text>
+            <Modal
+                isCentered
+                isOpen={isModalOpen}
+                onClose={onModalClose}
+                motionPreset="slideInBottom"
+                size="5xl"
+            >
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>{modalHeader}</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <Box>
+                            <Heading>{modalBodyHeading1}</Heading>
+                            <Text fontSize="lg" mb={4}>
+                                {modalBodyDescription1}
+                            </Text>
 
-                                    <Heading>{modalBodyHeading4}</Heading>
-                                    <Link
-                                        href={modalBodyVideo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        textDecoration="underline"
-                                    >
-                                        {modalBodyHeading4}
-                                        <IconButton
-                                            as="span"
-                                            icon={<FaExternalLinkAlt />}
-                                            ml={2}
-                                        />
-                                    </Link>
+                            <Heading>{modalBodyHeading2}</Heading>
+                            <Text fontSize="lg" mb={4}>
+                                {modalBodyDescription2}
+                            </Text>
+                            <Text fontSize="lg" mb={4}>
+                                {modalBodyDescription3}
+                            </Text>
 
-                                    <Heading>{modalBodyHeading5}</Heading>
-                                    <Text fontSize="lg" mb={4}>
-                                        {modalBodyDescription5}
-                                    </Text>
-                                </Box>
-                            </ModalBody>
-                        </ModalContent>
-                    </Modal>
-                </Stack>
-            </CardBody>
-        </Card>
+                            <Heading>{modalBodyHeading4}</Heading>
+                            <Link
+                                href={modalBodyVideo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                textDecoration="underline"
+                            >
+                                {modalBodyHeading4}
+                                <IconButton
+                                    as="span"
+                                    icon={<FaExternalLinkAlt />}
+                                    ml={2}
+                                />
+                            </Link>
+
+                            <Heading>{modalBodyHeading5}</Heading>
+                            <Text fontSize="lg" mb={4}>
+                                {modalBodyDescription5}
+                            </Text>
+                        </Box>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
+        </ModalCardComponent>
     );
 };
 

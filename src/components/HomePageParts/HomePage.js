@@ -1,30 +1,19 @@
-import { motion } from "framer-motion";
-import {
-    Divider,
-    AbsoluteCenter,
-    VStack,
-    Container,
-    useColorMode,
-    Box,
-} from "@chakra-ui/react";
+import { VStack, Flex } from "@chakra-ui/react";
 import { useRef, useEffect, useState } from "react";
 import { useInViewport } from "react-in-viewport";
-import { Text } from "@chakra-ui/react";
 
 import NavBar from "./NavBar";
 import Profile from "./Profile";
-import Project from "./Project";
 import ContactMe from "./ContactMe";
-import SoftSkillSHardSkills from "./SoftSkillsHardSkills";
 import TechStackAndJourney from "./TechStackAndJourney";
-import Tech from "../canvas/Tech";
 import TechStack from "./TechStack";
 import SectionContainer from "../Shared/SectionContainer";
 import ScrollProgressBar from "./ScrollProgressBar";
 import AboutMe from "./AboutMe";
+import Project from "./Project";
+import themeColors from "../Shared/Colors";
 
 function HomePage() {
-    const { colorMode } = useColorMode();
     const ref1 = useRef(null);
     const ref2 = useRef(null);
     const ref3 = useRef(null);
@@ -34,19 +23,19 @@ function HomePage() {
     const ref7 = useRef(null);
 
     const { inViewport: inViewport1 } = useInViewport(ref1, { threshold: 0.7 });
-    const { inViewport: inViewport2 } = useInViewport(ref2, { threshold: 0.7 });
-    const { inViewport: inViewport3 } = useInViewport(ref3, { threshold: 0.7 });
-    const { inViewport: inViewport4 } = useInViewport(ref4, { threshold: 0.7 });
-    const { inViewport: inViewport5 } = useInViewport(ref5, { threshold: 0.7 });
-    const { inViewport: inViewport6 } = useInViewport(ref6, { threshold: 0.7 });
-    const { inViewport: inViewport7 } = useInViewport(ref7, { threshold: 0.7 });
+    const { inViewport: inViewport2 } = useInViewport(ref2, { threshold: 0.4 });
+    const { inViewport: inViewport3 } = useInViewport(ref3, { threshold: 0.4 });
+    const { inViewport: inViewport4 } = useInViewport(ref4, { threshold: 0.4 });
+    const { inViewport: inViewport5 } = useInViewport(ref5, {
+        threshold: 0.05,
+    });
+    const { inViewport: inViewport6 } = useInViewport(ref6, { threshold: 0.4 });
+    const { inViewport: inViewport7 } = useInViewport(ref7, { threshold: 0.4 });
 
     const fadeInVariants = {
         hidden: { opacity: 0 }, // Start completely transparent
         visible: { opacity: 1, transition: { duration: 0.5 } }, // Fade in
     };
-
-    const backgroundColor = "#fffbe7";
 
     const [hasAppeared1, setHasAppeared1] = useState(false);
     const [hasAppeared2, setHasAppeared2] = useState(false);
@@ -63,6 +52,7 @@ function HomePage() {
         if (inViewport4 && !hasAppeared4) setHasAppeared4(true);
         if (inViewport5 && !hasAppeared5) setHasAppeared5(true);
         if (inViewport6 && !hasAppeared6) setHasAppeared6(true);
+        if (inViewport7 && !hasAppeared7) setHasAppeared7(true);
     }, [
         inViewport1,
         inViewport2,
@@ -70,6 +60,14 @@ function HomePage() {
         inViewport4,
         inViewport5,
         inViewport6,
+        inViewport7,
+        hasAppeared1,
+        hasAppeared2,
+        hasAppeared3,
+        hasAppeared4,
+        hasAppeared5,
+        hasAppeared6,
+        hasAppeared7,
     ]);
 
     return (
@@ -77,20 +75,28 @@ function HomePage() {
             <NavBar />
             <ScrollProgressBar />
             <VStack
-                p="8rem"
+                // p="8rem"
                 width="100vw"
                 height="100%"
-                spacing="8rem"
+                // spacing="8rem"
                 align="stretch"
-                bg={backgroundColor}
+                bg={themeColors.sunnyYellow}
+                p={3}
             >
                 <SectionContainer
                     id="section1"
                     refProp={ref1}
                     animate={hasAppeared1 ? "visible" : "hidden"}
                     variants={fadeInVariants}
+                    marginT="8rem"
                 >
-                    <Profile />
+                    <Flex
+                        height="100%" // Make Flex take the full height of SectionContainer
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        <Profile />
+                    </Flex>
                 </SectionContainer>
                 <SectionContainer
                     id="section2"
@@ -119,20 +125,12 @@ function HomePage() {
                     <Project />
                 </SectionContainer>
 
-                {/* <SectionContainer
-                    id="section5"
-                    refProp={ref5}
-                    animate={hasAppeared5 ? "visible" : "hidden"}
-                    variants={fadeInVariants}
-                >
-                    <SoftSkillSHardSkills />
-                </SectionContainer> */}
-
                 <SectionContainer
                     id="section5"
                     refProp={ref5}
                     animate={hasAppeared5 ? "visible" : "hidden"}
                     variants={fadeInVariants}
+                    marginT="10rem"
                 >
                     <TechStackAndJourney />
                 </SectionContainer>

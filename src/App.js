@@ -34,7 +34,7 @@ function App() {
             </Helmet>
             <Routes>
                 <Route path="/portfolio" element={<HomePage />} />
-                <Route path="/SchoolProjects" element={<OPPage />} />
+                <Route path="/StartupMisc" element={<OPPage />} />
                 <Route path="/MLProjects" element={<MLProjectsPage />} />
                 <Route path="/Certificates" element={<CertificatesPage />} />
                 <Route path="/WebappProjects" element={<WebAppPage />} />

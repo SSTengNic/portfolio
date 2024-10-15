@@ -15,11 +15,11 @@ function ContactMe() {
     return (
         <Container textAlign="center">
             <Text mb={5} alignContent="center" fontSize="3xl">
-                Let's Keep in Touch.
+                Contact Me
             </Text>
-            <Stack>
+            <Stack mb="30px">
                 <ContactForm />
-                <Divider></Divider>
+                <Divider borderColor="black"></Divider>
                 <HStack spacing="30px">
                     <Icon as={FaLinkedin} boxSize={6} />
                     <Text>https://www.linkedin.com/in/nicholas-teng/ </Text>

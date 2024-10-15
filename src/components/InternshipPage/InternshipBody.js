@@ -1,13 +1,4 @@
-import {
-    Container,
-    Text,
-    Tab,
-    TabList,
-    TabPanels,
-    TabPanel,
-    Tabs,
-    useDisclosure,
-} from "@chakra-ui/react";
+import { Text, useDisclosure, Flex } from "@chakra-ui/react";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import React, { Component } from "react";
@@ -33,88 +24,71 @@ function InternshipProjects() {
     } = useDisclosure();
 
     return (
-        <Container textAlign="center">
-            <Text mb={5} fontSize="3xl">
-                Internships
+        <>
+            <Text mb={8} fontSize="3xl" textAlign="center">
+                <b>Internships </b>
             </Text>
-            <Tabs isFitted variant="enclosed">
-                <TabList mb="1em">
-                    <Tab>SimplifyNext (Uipath)</Tab>
-                    <Tab>1TCC</Tab>
-                </TabList>
-                <TabPanels>
-                    <TabPanel>
-                        <SimplifyNextCardNugget
-                            isModalOpen={isSimplifyNextModalOpen}
-                            onModalOpen={onSimplifyNextOpen}
-                            onModalClose={onSimplifyNextClose}
-                            thumbnailPic={UiPathPic}
-                            cardHeader={
-                                ObjectsToUse.SimplifyNextObject.cardHeader
-                            }
-                            modalHeader={
-                                ObjectsToUse.SimplifyNextObject.modalHeader
-                            }
-                            modalBodyHeading1={
-                                ObjectsToUse.SimplifyNextObject
-                                    .modalBodyHeading1
-                            }
-                            modalBodyHeading2={
-                                ObjectsToUse.SimplifyNextObject
-                                    .modalBodyHeading2
-                            }
-                            modalBodyVideo={
-                                ObjectsToUse.SimplifyNextObject.modalBodyVideo
-                            }
-                            modalBodyDescription1={
-                                ObjectsToUse.SimplifyNextObject
-                                    .modalBodyDescription1
-                            }
-                            modalBodyDescription2={
-                                ObjectsToUse.SimplifyNextObject
-                                    .modalBodyDescription2
-                            }
-                            modalBodyDescription3={
-                                ObjectsToUse.SimplifyNextObject
-                                    .modalBodyDescription3
-                            }
-                        />
-                    </TabPanel>
-                    <TabPanel>
-                        {" "}
-                        <TCCCardNugget
-                            isModalOpen={isTCCModalOpen}
-                            modalHeader={ObjectsToUse.TCCObject.modalHeader}
-                            onModalOpen={onTCCOpen}
-                            onModalClose={onTCCClose}
-                            cardHeader={ObjectsToUse.TCCObject.cardHeader}
-                            thumbnailPic={TCCPic}
-                            modalBodyHeading1={
-                                ObjectsToUse.TCCObject.modalBodyHeading1
-                            }
-                            modalBodyHeading2={
-                                ObjectsToUse.TCCObject.modalBodyHeading2
-                            }
-                            modalBodyHeading3={
-                                ObjectsToUse.TCCObject.modalBodyHeading3
-                            }
-                            modalBodyVideo={
-                                ObjectsToUse.TCCObject.modalBodyVideo
-                            }
-                            modalBodyDescription1={
-                                ObjectsToUse.TCCObject.modalBodyDescription1
-                            }
-                            modalBodyDescription2={
-                                ObjectsToUse.TCCObject.modalBodyDescription2
-                            }
-                            modalBodyDescription3={
-                                ObjectsToUse.TCCObject.modalBodyDescription3
-                            }
-                        />
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-        </Container>
+            <Flex
+                wrap="wrap" // Allows items to wrap to the next line
+                justify="center" // Center the items horizontally
+                align="flex-start" // Align items to the top
+                width="100%"
+                maxW="900px" // Maximum width for the container
+                mx="auto"
+                textAlign="center"
+            >
+                <SimplifyNextCardNugget
+                    heading={ObjectsToUse.SimplifyNextObject.heading}
+                    isModalOpen={isSimplifyNextModalOpen}
+                    onModalOpen={onSimplifyNextOpen}
+                    onModalClose={onSimplifyNextClose}
+                    thumbnailPic={UiPathPic}
+                    cardHeader={ObjectsToUse.SimplifyNextObject.cardHeader}
+                    modalHeader={ObjectsToUse.SimplifyNextObject.modalHeader}
+                    modalBodyHeading1={
+                        ObjectsToUse.SimplifyNextObject.modalBodyHeading1
+                    }
+                    modalBodyHeading2={
+                        ObjectsToUse.SimplifyNextObject.modalBodyHeading2
+                    }
+                    modalBodyVideo={
+                        ObjectsToUse.SimplifyNextObject.modalBodyVideo
+                    }
+                    modalBodyDescription1={
+                        ObjectsToUse.SimplifyNextObject.modalBodyDescription1
+                    }
+                    modalBodyDescription2={
+                        ObjectsToUse.SimplifyNextObject.modalBodyDescription2
+                    }
+                    modalBodyDescription3={
+                        ObjectsToUse.SimplifyNextObject.modalBodyDescription3
+                    }
+                />
+
+                <TCCCardNugget
+                    heading={ObjectsToUse.TCCObject.heading}
+                    isModalOpen={isTCCModalOpen}
+                    modalHeader={ObjectsToUse.TCCObject.modalHeader}
+                    onModalOpen={onTCCOpen}
+                    onModalClose={onTCCClose}
+                    cardHeader={ObjectsToUse.TCCObject.cardHeader}
+                    thumbnailPic={TCCPic}
+                    modalBodyHeading1={ObjectsToUse.TCCObject.modalBodyHeading1}
+                    modalBodyHeading2={ObjectsToUse.TCCObject.modalBodyHeading2}
+                    modalBodyHeading3={ObjectsToUse.TCCObject.modalBodyHeading3}
+                    modalBodyVideo={ObjectsToUse.TCCObject.modalBodyVideo}
+                    modalBodyDescription1={
+                        ObjectsToUse.TCCObject.modalBodyDescription1
+                    }
+                    modalBodyDescription2={
+                        ObjectsToUse.TCCObject.modalBodyDescription2
+                    }
+                    modalBodyDescription3={
+                        ObjectsToUse.TCCObject.modalBodyDescription3
+                    }
+                />
+            </Flex>
+        </>
     );
 }
 

@@ -1,33 +1,5 @@
-import {
-    Container,
-    Text,
-    Tab,
-    TabList,
-    TabPanels,
-    TabPanel,
-    Tabs,
-    Card,
-    CardBody,
-    Image,
-    Stack,
-    Heading,
-    useDisclosure,
-    Button,
-} from "@chakra-ui/react";
+import { Text, useDisclosure, Flex } from "@chakra-ui/react";
 
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalCloseButton,
-    IconButton,
-    Box,
-    AspectRatio,
-} from "@chakra-ui/react";
-
-import { FaExternalLinkAlt } from "react-icons/fa";
 import React from "react";
 import RCKPic from "../../pictures/School_Projects_Card_Front_Page.jpg";
 import RCKCardNugget from "./SchoolProjectCards/RCKCardNugget";
@@ -39,55 +11,44 @@ const SchoolProjectBody = () => {
         onOpen: onRCKOpen,
         onClose: onRCKClose,
     } = useDisclosure();
-    const {
-        isOpen: isPinchPromoOpen,
-        onOpen: onPinchPromoOpen,
-        onClose: onPinchPromoClose,
-    } = useDisclosure();
+
     return (
-        <Container textAlign="center">
-            <Text mb={5} fontSize="3xl">
-                Projects
+        <>
+            <Text mb={8} fontSize="3xl" textAlign="center">
+                <b>Misc Projects</b>
             </Text>
-            <Tabs isFitted variant="enclosed">
-                <TabList mb="1em">
-                    <Tab>Remote Controlled Koi (RCK)</Tab>
-                </TabList>
-                <TabPanels>
-                    <TabPanel>
-                        <RCKCardNugget
-                            heading={ObjectsToUse.RCKObject.heading}
-                            onModalOpen={onRCKOpen}
-                            isModalOpen={isRCKModalOpen}
-                            onModalClose={onRCKClose}
-                            thumbnailPic={RCKPic}
-                            modalHeader={ObjectsToUse.RCKObject.modalHeader}
-                            modalBodyHeading1={
-                                ObjectsToUse.RCKObject.modalBodyHeading1
-                            }
-                            modalBodyHeading2={
-                                ObjectsToUse.RCKObject.modalBodyHeading2
-                            }
-                            modalBodyHeading3={
-                                ObjectsToUse.RCKObject.modalBodyHeading3
-                            }
-                            modalBodyDescription1={
-                                ObjectsToUse.RCKObject.modalBodyDescription1
-                            }
-                            modalBodyDescription2={
-                                ObjectsToUse.RCKObject.modalBodyDescription2
-                            }
-                            modalBodyDescription3={
-                                ObjectsToUse.RCKObject.modalBodyDescription3
-                            }
-                            modalBodyVideo={
-                                ObjectsToUse.RCKObject.modalBodyVideo
-                            }
-                        />
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-        </Container>
+            <Flex
+                wrap="wrap" // Allows items to wrap to the next line
+                justify="center" // Center the items horizontally
+                align="flex-start" // Align items to the top
+                width="100%"
+                maxW="900px" // Maximum width for the container
+                mx="auto"
+                textAlign="center"
+            >
+                <RCKCardNugget
+                    heading={ObjectsToUse.RCKObject.heading}
+                    onModalOpen={onRCKOpen}
+                    isModalOpen={isRCKModalOpen}
+                    onModalClose={onRCKClose}
+                    thumbnailPic={RCKPic}
+                    modalHeader={ObjectsToUse.RCKObject.modalHeader}
+                    modalBodyHeading1={ObjectsToUse.RCKObject.modalBodyHeading1}
+                    modalBodyHeading2={ObjectsToUse.RCKObject.modalBodyHeading2}
+                    modalBodyHeading3={ObjectsToUse.RCKObject.modalBodyHeading3}
+                    modalBodyDescription1={
+                        ObjectsToUse.RCKObject.modalBodyDescription1
+                    }
+                    modalBodyDescription2={
+                        ObjectsToUse.RCKObject.modalBodyDescription2
+                    }
+                    modalBodyDescription3={
+                        ObjectsToUse.RCKObject.modalBodyDescription3
+                    }
+                    modalBodyVideo={ObjectsToUse.RCKObject.modalBodyVideo}
+                />
+            </Flex>
+        </>
     );
 };
 

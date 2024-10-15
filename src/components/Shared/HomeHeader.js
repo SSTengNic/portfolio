@@ -1,87 +1,165 @@
-import React from "react";
-import { FaSun, FaMoon, FaLinkedin, FaHome, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
-
 import {
     Flex,
     Heading,
-    IconButton,
-    useColorMode,
     Spacer,
-    Container,
+    HStack,
+    Link as ChakraLink,
+    Drawer,
+    DrawerBody,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    DrawerHeader,
+    VStack,
+    useDisclosure,
+    useMediaQuery,
+    IconButton,
 } from "@chakra-ui/react";
-import backgroundColors from "./Colors";
-function HomeHeader({ HomeHeaderText }) {
-    const { colorMode, toggleColorMode } = useColorMode();
-    const isDark = colorMode === "dark";
+import { useState, useEffect } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import themeColors from "./Colors";
+import { GiHamburgerMenu } from "react-icons/gi";
+const HomeHeader = ({ HomeHeaderText }) => {
+    const [isShrunk, setIsShrunk] = useState(false);
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
+    const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        setIsShrunk(scrollTop > 20);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const links = [
+        { name: "Home", to: "/portfolio" },
+        {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/in/nicholas-teng/",
+            external: true,
+        },
+        {
+            name: "Github",
+            href: "https://github.com/SSTengNic",
+            external: true,
+        },
+    ];
+
+    // Find the index of the LinkedIn link
+    const linkedInIndex = links.findIndex((link) => link.name === "LinkedIn");
+
+    // Determine the additional links to add
+    const additionalLinks = [];
+    if (HomeHeaderText === "Internships") {
+        additionalLinks.push(
+            { name: "Web Applications", to: "/WebappProjects" },
+            { name: "Startups & Misc", to: "/StartupMisc" }
+        );
+    } else if (HomeHeaderText === "Web Application Projects") {
+        additionalLinks.push(
+            { name: "Startups & Misc", to: "/StartupMisc" },
+            { name: "Internships", to: "/Internships" }
+        );
+    } else if (HomeHeaderText === "Startups & Misc") {
+        additionalLinks.push(
+            { name: "Web Applications", to: "/WebappProjects" },
+            { name: "Internships", to: "/Internships" }
+        );
+    }
+
+    // Insert the additional links before the LinkedIn link
+    if (linkedInIndex !== -1) {
+        links.splice(linkedInIndex, 0, ...additionalLinks);
+    }
+
+    const renderLinks = (isMobile = false) =>
+        links.map((link) =>
+            link.external ? (
+                <ChakraLink
+                    key={link.name}
+                    href={link.href}
+                    isExternal
+                    _hover={{
+                        textDecoration: "none",
+                        borderBottom: "2px solid black",
+                    }}
+                    onClick={isMobile ? onClose : undefined}
+                >
+                    {link.name}
+                </ChakraLink>
+            ) : (
+                <ChakraLink
+                    key={link.name}
+                    as={RouterLink}
+                    to={link.to}
+                    _hover={{
+                        textDecoration: "none",
+                        borderBottom: "2px solid black",
+                    }}
+                    onClick={isMobile ? onClose : undefined}
+                >
+                    {link.name}
+                </ChakraLink>
+            )
+        );
 
     return (
-        <Container
-            id="section1"
-            backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
-            boxShadow="xl"
-            p={4}
-            borderRadius="md"
+        <Flex
             w="100%"
-            maxW="600px"
-            mb={4}
+            position="sticky"
+            top={0}
+            boxShadow="md"
+            p={isShrunk ? 2 : 4}
+            bg={themeColors.sunnyYellow}
+            zIndex="1000"
+            transition="padding 0.3s ease"
+            justifyContent="center"
+            alignItems="center"
         >
-            <Flex w="100%">
-                <Heading size="md" fontWeight="semibold" mt="5px">
-                    {HomeHeaderText}
-                </Heading>
-                <Spacer></Spacer>
+            <Heading
+                style={{ fontSize: isShrunk ? "20px" : "25px" }}
+                fontWeight="semibold"
+                mt="5px"
+                transition="font-size 0.3s ease"
+            >
+                {HomeHeaderText}
+            </Heading>
+            <Spacer />
 
-                <Link to="/portfolio">
+            {isLargerThan768 ? (
+                <HStack spacing={5} mr={5}>
+                    {renderLinks()}
+                </HStack>
+            ) : (
+                <>
                     <IconButton
-                        ml={2}
-                        icon={<FaHome />}
-                        isRound="true"
-                        style={{ fontSize: "22px" }}
-                    ></IconButton>
-                </Link>
-                <a
-                    href="https://www.linkedin.com/in/nicholas-teng/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <IconButton
-                        ml={2}
-                        icon={<FaLinkedin />}
-                        isRound="true"
-                        onClick={null}
-                        style={{ fontSize: "22px" }}
-                    ></IconButton>
-                </a>
-
-                <a
-                    href="https://github.com/SSTengNic"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <IconButton
-                        ml={2}
-                        icon={<FaGithub style={{ fontSize: "22px" }} />}
-                        isRound="true"
-                        onClick={null}
-                    ></IconButton>
-                </a>
-
-                <IconButton
-                    ml={2}
-                    icon={
-                        isDark ? (
-                            <FaSun style={{ fontSize: "22px" }} />
-                        ) : (
-                            <FaMoon style={{ fontSize: "22px" }} />
-                        )
-                    }
-                    isRound="true"
-                    onClick={toggleColorMode}
-                ></IconButton>
-            </Flex>
-        </Container>
+                        aria-label="Open menu"
+                        icon={<GiHamburgerMenu />}
+                        onClick={onOpen}
+                        variant="outline"
+                        mr={2}
+                    />
+                    <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+                        <DrawerOverlay />
+                        <DrawerContent>
+                            <DrawerCloseButton />
+                            <DrawerHeader>{HomeHeaderText}</DrawerHeader>
+                            <DrawerBody>
+                                <VStack spacing={4} align="start">
+                                    {renderLinks(true)}
+                                </VStack>
+                            </DrawerBody>
+                        </DrawerContent>
+                    </Drawer>
+                </>
+            )}
+        </Flex>
     );
-}
+};
 
 export default HomeHeader;

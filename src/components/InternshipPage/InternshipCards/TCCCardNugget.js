@@ -22,6 +22,7 @@ import {
 import { FaExternalLinkAlt } from "react-icons/fa";
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
+import ModalCardComponent from "../../Shared/ModalCardComponent";
 
 const TCCCardNugget = ({
     onModalOpen,
@@ -37,70 +38,64 @@ const TCCCardNugget = ({
     modalBodyDescription1,
     modalBodyDescription2,
     modalBodyDescription3,
+    heading,
 }) => {
     return (
-        <Card maxW="sm" mx="auto">
-            <CardBody mx="auto">
-                <Image
-                    src={thumbnailPic}
-                    alt="RCK Pic"
-                    borderRadius="20px"
-                ></Image>
-                <Stack mt="6" spacing="3">
-                    <Heading size="md">{cardHeader}</Heading>
-                    <Button onClick={onModalOpen}>More</Button>
-                    <Modal
-                        isCentered
-                        isOpen={isModalOpen}
-                        onClose={onModalClose}
-                        motionPreset="SlideInBottom"
-                        size="3xl"
-                    >
-                        <ModalOverlay />
-                        <ModalContent>
-                            <ModalContent>
-                                <ModalHeader>{modalHeader}</ModalHeader>
-                                <ModalCloseButton />
-                                <ModalBody>
-                                    <Box>
-                                        <Heading mb={2}>
-                                            {modalBodyHeading1}
-                                        </Heading>
-                                        <AspectRatio ratio={4 / 2} mb={4}>
-                                            <iframe
-                                                src={modalBodyVideo}
-                                                title="YouTube video player"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowfullscreen
-                                            ></iframe>
-                                        </AspectRatio>
+        <ModalCardComponent
+            onModalOpen={onModalOpen}
+            thumbnailPic={thumbnailPic}
+            heading={heading}
+        >
+            <Text textAlign="left" ml={2} mb={3} spacing="">
+                In a design thinking module, I lead my team throughout the
+                course to build an <b>innovative pond cleaning system</b>
+                inspired by Koi fish🐟, known for effective up pond effectively.
+            </Text>
 
-                                        <Text fontSize="lg" mb={5}>
-                                            {" "}
-                                            {modalBodyDescription1}
-                                        </Text>
-                                        <Heading mb={2}>
-                                            {modalBodyHeading2}
-                                        </Heading>
-                                        <Text fontSize="lg" mb={5}>
-                                            {" "}
-                                            {modalBodyDescription2}
-                                        </Text>
-                                        <Heading mb={2}>
-                                            {modalBodyHeading3}
-                                        </Heading>
-                                        <Text fontSize="lg" mb={5}>
-                                            {modalBodyDescription3}
-                                        </Text>
-                                    </Box>
-                                </ModalBody>
-                            </ModalContent>
-                        </ModalContent>
-                    </Modal>
-                </Stack>
-            </CardBody>
-        </Card>
+            <Modal
+                isCentered
+                isOpen={isModalOpen}
+                onClose={onModalClose}
+                motionPreset="SlideInBottom"
+                size="3xl"
+            >
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalContent>
+                        <ModalHeader>{modalHeader}</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                            <Box>
+                                <Heading mb={2}>{modalBodyHeading1}</Heading>
+                                <AspectRatio ratio={4 / 2} mb={4}>
+                                    <iframe
+                                        src={modalBodyVideo}
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                    ></iframe>
+                                </AspectRatio>
+
+                                <Text fontSize="lg" mb={5}>
+                                    {" "}
+                                    {modalBodyDescription1}
+                                </Text>
+                                <Heading mb={2}>{modalBodyHeading2}</Heading>
+                                <Text fontSize="lg" mb={5}>
+                                    {" "}
+                                    {modalBodyDescription2}
+                                </Text>
+                                <Heading mb={2}>{modalBodyHeading3}</Heading>
+                                <Text fontSize="lg" mb={5}>
+                                    {modalBodyDescription3}
+                                </Text>
+                            </Box>
+                        </ModalBody>
+                    </ModalContent>
+                </ModalContent>
+            </Modal>
+        </ModalCardComponent>
     );
 };
 

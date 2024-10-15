@@ -6,6 +6,7 @@
 // };
 
 const SimplifyNextObject = {
+    heading: "Technology Analyst Intern",
     cardHeader: `SimplifyNext (Uipath)`,
     modalHeader: `Learning UiPath in SimplifyNext`,
     modalBodyHeading1: `What is UiPath?`,
@@ -72,6 +73,7 @@ const SimplifyNextObject = {
 };
 
 const TCCObject = {
+    heading: "IT Solutions Development Intern",
     cardHeader: `1TCC`,
     modalHeader: `Interning at 1TCC, a CaaS Fintech Company`,
     modalBodyHeading1: `What does 1TCC do?`,

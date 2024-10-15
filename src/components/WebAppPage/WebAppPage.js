@@ -1,32 +1,15 @@
 import React from "react";
-import HomeHeader from "../Shared/HomeHeader";
-import { VStack } from "@chakra-ui/react";
 import WebAppBody from "./WebAppBody";
-import { useColorMode, Container } from "@chakra-ui/react";
-
-const backgroundColors = {
-    light: "rgba(254, 255, 238, 0.4)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
-    dark: "rgba(0,0, 0, 0.2)", // Adjust the RGB values and alpha (0.5 for semi-transparent)
-};
+import SectionContainer from "../Shared/SectionContainer";
+import PageWithHeader from "../Shared/PageWithHeader";
 
 function WebAppPage() {
-    const { colorMode } = useColorMode();
     return (
-        <VStack p={5}>
-            <HomeHeader HomeHeaderText={"Web Application Projects"} />
-
-            <Container
-                backgroundColor={backgroundColors[colorMode]} // Apply background color with transparency
-                boxShadow="xl"
-                p={4}
-                borderRadius="md"
-                maxW="600px"
-                w="100%"
-                mb={4}
-            >
+        <PageWithHeader HomeHeaderText={"Web Application Projects"}>
+            <SectionContainer id="section1" marginT="2rem" marginB="5rem">
                 <WebAppBody />
-            </Container>
-        </VStack>
+            </SectionContainer>
+        </PageWithHeader>
     );
 }
 

@@ -1,124 +1,109 @@
 import React from "react";
 import {
-    Container,
     Text,
     Card,
     CardBody,
     Image,
     Stack,
     Heading,
-    Button,
     Center,
+    Grid,
+    LinkBox,
+    LinkOverlay,
+    Box,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import webAppPic from "../../pictures/Web_Application_Pic.jpeg";
-import MLPic from "../../pictures/Machine_Learning_Card_Picture.png";
+import webAppPic from "../../pictures/HomePagePics/New_Web_App_Pic.png";
 import PersonalProjectPic from "../../pictures/School_Projects_Card_Front_Page.jpg";
-import CertsPic from "../../pictures/Certs_pic.jpg";
-import InternshipPic from "../../pictures/InternshipPic.jpg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import InternshipPic from "../../pictures/HomePagePics/1TCC_Pic_Of_Me_Edited_2.jpg";
+import themeColors from "../Shared/Colors";
 
 const Project = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
     return (
-        <Container
-            boxShadow="transparent"
-            p={4}
-            borderRadius="md"
-            w="100%"
-            maxW="600px"
-            mb={4}
-            textAlign="center"
-        >
-            <Text mb={5} fontSize="3xl">
-                <b>My Projects </b>
+        <Center flexDirection="column" p={5}>
+            <Text fontSize="3xl" fontWeight="bold" mb={4}>
+                Projects
             </Text>
-
-            <Slider {...settings}>
-                <div>
-                    <CardComponent
-                        image={webAppPic}
-                        heading="Fullstack Web Applications"
-                        description="Check out my personal projects crafted with MERN Stack and MySQL!"
-                        link="/WebappProjects"
-                    />
-                </div>
-                <div>
-                    <CardComponent
-                        image={MLPic}
-                        heading="Machine Learning Projects"
-                        description="Check out my Kaggle and other projects I have done with Machine Learning!"
-                        link="/MLProjects"
-                    />
-                </div>
-                <div>
-                    <CardComponent
-                        image={PersonalProjectPic}
-                        heading="My School Projects"
-                        description="Check out the projects that I have done for school work!"
-                        link="/SchoolProjects"
-                    />
-                </div>
-                <div>
-                    <CardComponent
-                        image={CertsPic}
-                        heading="Certificates"
-                        description="Check out my certificates!"
-                        link="/Certificates"
-                    />
-                </div>
-                <div>
-                    <CardComponent
-                        image={InternshipPic}
-                        heading="Internships"
-                        description="Check out the Internships that I have completed!"
-                        link="/Internships"
-                    />
-                </div>
-            </Slider>
-        </Container>
+            <Grid
+                templateColumns="repeat(auto-fill, minmax(300px, 1fr))" // Responsive grid layout
+                gap={6} // Space between grid items
+                width="100%"
+                maxW="1200px" // Set a maximum width for the grid to center it
+            >
+                <CardComponent
+                    image={PersonalProjectPic}
+                    heading="Startup/Misc Projects"
+                    description="Various startup and university projects completed so far."
+                    link="/StartupMisc"
+                />
+                <CardComponent
+                    image={webAppPic}
+                    heading="Fullstack Web Applications"
+                    description="Projects built using MERN Stack, MySQL, Astro, Deno and many more."
+                    link="/WebappProjects"
+                />
+                {/* <CardComponent
+                    image={CertsPic}
+                    heading="Certificates"
+                    description="Check out my certificates!"
+                    link="/Certificates"
+                /> */}
+                <CardComponent
+                    image={InternshipPic}
+                    heading="Internships"
+                    description="Explore my internship journey where I work in various companies."
+                    link="/Internships"
+                />
+            </Grid>
+        </Center>
     );
 };
 
 const CardComponent = ({ image, heading, description, link }) => {
     return (
-        <Card
-            maxW="md"
+        <LinkBox
+            as="article"
+            maxW="xl"
             mx="auto"
-            maxH="l"
+            maxH="xl"
             borderRadius="xl"
-            backgroundColor="transparent"
+            backgroundColor={themeColors.vibyBlue}
         >
-            <CardBody>
-                <Center>
-                    <Image
-                        src={image}
-                        alt="Project Image"
-                        borderRadius="20px"
-                        // Ensure that the image maintains its aspect ratio
-                        h="230px"
-                        width="80%"
-                    />
-                </Center>
-                <Stack mt="6" spacing="3">
-                    <Heading size="md">{heading}</Heading>
-                    <Text>{description}</Text>
-                    <Link to={link}>
-                        <Button variant="solid" colorScheme="blue">
-                            Click Here
-                        </Button>
-                    </Link>
-                </Stack>
-            </CardBody>
-        </Card>
+            <Card
+                borderRadius="xl"
+                backgroundColor={themeColors.vibyBlue}
+                cursor="pointer"
+                overflow="hidden"
+                _hover={{ boxShadow: "xl" }} // Hover effect
+                borderColor="black"
+                borderWidth="2px"
+            >
+                <CardBody p={0} mb={3}>
+                    <LinkOverlay as={Link} to={link}>
+                        <Center>
+                            <Image
+                                src={image}
+                                alt="Project Image"
+                                borderTopRadius="xl" // Rounds the top of the image
+                                h="350px"
+                                w="100%"
+                                objectFit="cover" // Ensures the image covers the area without stretching
+                            />
+                        </Center>
+                        <Box
+                            w="100%"
+                            h="2px" // Adjust height as needed
+                            bg="black" // Use any color you like
+                            borderRadius="full" // Make it rounded
+                        />
+                        <Stack textAlign="center" mt="6" spacing="3">
+                            <Heading size="md">{heading}</Heading>
+                            <Text>{description}</Text>
+                        </Stack>
+                    </LinkOverlay>
+                </CardBody>
+            </Card>
+        </LinkBox>
     );
 };
 

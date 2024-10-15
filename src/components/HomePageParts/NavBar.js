@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { FaLinkedin, FaMailBulk, FaGithub } from "react-icons/fa";
 import ScrollProgressBar from "./ScrollProgressBar";
-import { Flex, Heading, IconButton, Spacer } from "@chakra-ui/react";
+import {
+    Flex,
+    Heading,
+    Spacer,
+    Link as ChakraLink,
+    IconButton,
+    Drawer,
+    DrawerBody,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    useDisclosure,
+    DrawerHeader,
+    VStack,
+    HStack,
+} from "@chakra-ui/react";
+import themeColors from "../Shared/Colors";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link as RouterLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ headerText = "Nicholas Teng" }) {
     const [isShrunk, setIsShrunk] = useState(false);
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     const handleScroll = () => {
         const scrollTop = window.scrollY;
-        // Adjust this value to change when the navbar should shrink
-        setIsShrunk(scrollTop > 20); // Shrink if scrolled more than 20 pixels
-    };
-
-    const scrollToSection = (sectionId) => {
-        const sectionElement = document.getElementById(sectionId);
-        console.log("Hello");
-        if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: "smooth" });
-        }
+        setIsShrunk(scrollTop > 20);
     };
 
     useEffect(() => {
@@ -27,60 +36,118 @@ function NavBar() {
         };
     }, []);
 
+    const links = [
+        { name: "Projects", sectionId: "section4" },
+        { name: "Milestones", sectionId: "section5" },
+        { name: "Contact Me", sectionId: "section6" },
+        {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/in/nicholas-teng/",
+            external: true,
+        },
+        {
+            name: "Github",
+            href: "https://github.com/SSTengNic",
+            external: true,
+        },
+    ];
+
+    const renderLinks = (isMobile = false) =>
+        links.map((link) =>
+            link.external ? (
+                <ChakraLink
+                    key={link.name}
+                    href={link.href}
+                    isExternal
+                    _hover={{
+                        textDecoration: "none",
+                        borderBottom: "2px solid black",
+                    }}
+                    onClick={isMobile ? onClose : undefined}
+                >
+                    {link.name}
+                </ChakraLink>
+            ) : (
+                <ChakraLink
+                    key={link.name}
+                    as="button"
+                    onClick={() => {
+                        scrollToSectionOffset(link.sectionId);
+                        if (isMobile) onClose();
+                    }}
+                    _hover={{
+                        textDecoration: "none",
+                        borderBottom: "2px solid black",
+                    }}
+                >
+                    {link.name}
+                </ChakraLink>
+            )
+        );
+
+    const scrollToSectionOffset = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const sectionTop =
+                section.getBoundingClientRect().top + window.scrollY;
+            const offset = 100;
+            window.scrollTo({
+                top: sectionTop - offset,
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <>
             <Flex
                 w="100%"
-                position="sticky" // Makes the header sticky
-                top={0} // Sticks the header to the top
-                boxShadow="md" // Optional: add a shadow for separation
-                p={isShrunk ? 2 : 4} // Adjust padding based on shrunk state
-                bg="#fff8da"
+                position="sticky"
+                top={0}
+                boxShadow="md"
+                p={isShrunk ? 2 : 4}
+                bg={themeColors.sunnyYellow}
                 zIndex="1000"
-                transition="padding 0.3s ease" // Smooth transition for padding change
+                transition="padding 0.3s ease"
+                justifyContent="center"
+                alignItems="center"
             >
                 <Heading
-                    style={{ fontSize: isShrunk ? "20px" : "25px" }} // Change font size
+                    style={{ fontSize: isShrunk ? "20px" : "25px" }}
                     fontWeight="semibold"
                     mt="5px"
-                    transition="font-size 0.3s ease" // Smooth transition for font size change
+                    transition="font-size 0.3s ease"
                 >
-                    Nicholas Teng
+                    {headerText}
                 </Heading>
-                <Spacer></Spacer>
+                <Spacer />
 
+                <HStack spacing={5} mr={5}>
+                    {renderLinks()}
+                </HStack>
                 <IconButton
-                    ml={5}
-                    icon={<FaMailBulk style={{ fontSize: "20px" }} />}
-                    isRound="true"
-                    onClick={() => scrollToSection("section4")}
-                ></IconButton>
-
-                <a
-                    href="https://www.linkedin.com/in/nicholas-teng/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <IconButton
-                        ml={5}
-                        icon={<FaLinkedin style={{ fontSize: "22px" }} />}
-                        isRound="true"
-                        onClick={null}
-                    ></IconButton>
-                </a>
-                <a
-                    href="https://github.com/SSTengNic"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    <IconButton
-                        ml={5}
-                        icon={<FaGithub style={{ fontSize: "22px" }} />}
-                        isRound="true"
-                        onClick={null}
-                    ></IconButton>
-                </a>
+                    aria-label="Open Menu"
+                    icon={<GiHamburgerMenu />}
+                    display={{ base: "flex", md: "none" }}
+                    onClick={onOpen}
+                    variant="outline"
+                    mr={2}
+                />
             </Flex>
+
+            <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+                <DrawerOverlay />
+                <DrawerContent>
+                    <DrawerCloseButton />
+                    <DrawerHeader>{headerText}</DrawerHeader>
+                    <DrawerBody>
+                        <VStack spacing={4} align="start">
+                            {renderLinks(true)}
+                        </VStack>
+                    </DrawerBody>
+                </DrawerContent>
+            </Drawer>
+
             <ScrollProgressBar />
         </>
     );

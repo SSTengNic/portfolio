@@ -1,18 +1,8 @@
-import {
-    Container,
-    Text,
-    Tab,
-    TabList,
-    TabPanels,
-    TabPanel,
-    Tabs,
-    useDisclosure,
-} from "@chakra-ui/react";
+import { Text, useDisclosure, Flex } from "@chakra-ui/react";
 
 import React from "react";
 import PinchPromoPic from "../../pictures/PinchPromoLogo.jpg";
 import HungrysiaPic from "../../pictures/HungrySiaLogo.jpg";
-
 import HungrysiaCardNugget from "./StartupCards/HungrysiaCardNugget";
 import PinchPromoCardNugget from "./StartupCards/PinchPromoCardNugget";
 
@@ -30,105 +20,92 @@ const StartupBody = () => {
         onClose: onHungrysiaClose,
     } = useDisclosure();
     return (
-        <Container textAlign="center">
-            <Text mb={5} fontSize="3xl">
-                Startups
+        <>
+            <Text mb={8} fontSize="3xl" textAlign="center">
+                <b>Startups </b>
             </Text>
-            <Tabs isFitted variant="enclosed">
-                <TabList mb="1em">
-                    <Tab>PinchPromo</Tab>
-                    <Tab>Hungrysia@SUTD</Tab>
-                </TabList>
-                <TabPanels>
-                    <TabPanel>
-                        <PinchPromoCardNugget
-                            heading={ObjectsToUse.PinchPromoObject.heading}
-                            onModalOpen={onPinchPromoOpen}
-                            isModalOpen={isPinchPromoOpen}
-                            onModalClose={onPinchPromoClose}
-                            thumbnailPic={PinchPromoPic}
-                            modalHeader={
-                                ObjectsToUse.PinchPromoObject.modalHeader
-                            }
-                            modalBodyHeading1={
-                                ObjectsToUse.PinchPromoObject.modalBodyHeading1
-                            }
-                            modalBodyHeading2={
-                                ObjectsToUse.PinchPromoObject.modalBodyHeading2
-                            }
-                            modalBodyHeading3={
-                                ObjectsToUse.PinchPromoObject.modalBodyHeading3
-                            }
-                            modalBodyDescription1={
-                                ObjectsToUse.PinchPromoObject
-                                    .modalBodyDescription1
-                            }
-                            modalBodyDescription2={
-                                ObjectsToUse.PinchPromoObject
-                                    .modalBodyDescription2
-                            }
-                            modalBodyDescription3={
-                                ObjectsToUse.PinchPromoObject
-                                    .modalBodyDescription3
-                            }
-                            modalBodyHeading4={
-                                ObjectsToUse.PinchPromoObject.modalBodyHeading4
-                            }
-                            modalBodyHeading5={
-                                ObjectsToUse.PinchPromoObject.modalBodyHeading5
-                            }
-                            modalBodyDescription5={
-                                ObjectsToUse.PinchPromoObject
-                                    .modalBodyDescription5
-                            }
-                            modalBodyVideo={
-                                ObjectsToUse.PinchPromoObject.modalBodyVideo
-                            }
-                        />
-                    </TabPanel>
-                    <TabPanel>
-                        <HungrysiaCardNugget
-                            onModalOpen={onHungrysiaOpen}
-                            isModalOpen={isHungrysiaOpen}
-                            onModalClose={onHungrysiaClose}
-                            thumbnailPic={HungrysiaPic}
-                            heading={ObjectsToUse.HungrysiaObject.heading}
-                            modalHeader={
-                                ObjectsToUse.HungrysiaObject.modalHeader
-                            }
-                            modalBodyHeading1={
-                                ObjectsToUse.HungrysiaObject.modalBodyHeading1
-                            }
-                            modalBodyHeading2={
-                                ObjectsToUse.HungrysiaObject.modalBodyHeading2
-                            }
-                            modalBodyHeading3={
-                                ObjectsToUse.HungrysiaObject.modalBodyHeading3
-                            }
-                            modalBodyHeading4={
-                                ObjectsToUse.HungrysiaObject.modalBodyHeading4
-                            }
-                            modalBodyDescription1={
-                                ObjectsToUse.HungrysiaObject
-                                    .modalBodyDescription1
-                            }
-                            modalBodyDescription2={
-                                ObjectsToUse.HungrysiaObject
-                                    .modalBodyDescription2
-                            }
-                            modalBodyDescription3={
-                                ObjectsToUse.HungrysiaObject
-                                    .modalBodyDescription3
-                            }
-                            modalBodyDescription4={
-                                ObjectsToUse.HungrysiaObject
-                                    .modalBodyDescription4
-                            }
-                        />
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-        </Container>
+            <Flex
+                wrap="wrap" // Allows items to wrap to the next line
+                justify="center" // Center the items horizontally
+                align="flex-start" // Align items to the top
+                width="100%"
+                maxW="900px" // Maximum width for the container
+                mx="auto"
+                textAlign="center"
+            >
+                <PinchPromoCardNugget
+                    heading={ObjectsToUse.PinchPromoObject.heading}
+                    onModalOpen={onPinchPromoOpen}
+                    isModalOpen={isPinchPromoOpen}
+                    onModalClose={onPinchPromoClose}
+                    thumbnailPic={PinchPromoPic}
+                    modalHeader={ObjectsToUse.PinchPromoObject.modalHeader}
+                    modalBodyHeading1={
+                        ObjectsToUse.PinchPromoObject.modalBodyHeading1
+                    }
+                    modalBodyHeading2={
+                        ObjectsToUse.PinchPromoObject.modalBodyHeading2
+                    }
+                    modalBodyHeading3={
+                        ObjectsToUse.PinchPromoObject.modalBodyHeading3
+                    }
+                    modalBodyDescription1={
+                        ObjectsToUse.PinchPromoObject.modalBodyDescription1
+                    }
+                    modalBodyDescription2={
+                        ObjectsToUse.PinchPromoObject.modalBodyDescription2
+                    }
+                    modalBodyDescription3={
+                        ObjectsToUse.PinchPromoObject.modalBodyDescription3
+                    }
+                    modalBodyHeading4={
+                        ObjectsToUse.PinchPromoObject.modalBodyHeading4
+                    }
+                    modalBodyHeading5={
+                        ObjectsToUse.PinchPromoObject.modalBodyHeading5
+                    }
+                    modalBodyDescription5={
+                        ObjectsToUse.PinchPromoObject.modalBodyDescription5
+                    }
+                    modalBodyVideo={
+                        ObjectsToUse.PinchPromoObject.modalBodyVideo
+                    }
+                />
+
+                <HungrysiaCardNugget
+                    onModalOpen={onHungrysiaOpen}
+                    isModalOpen={isHungrysiaOpen}
+                    onModalClose={onHungrysiaClose}
+                    thumbnailPic={HungrysiaPic}
+                    heading={ObjectsToUse.HungrysiaObject.heading}
+                    modalHeader={ObjectsToUse.HungrysiaObject.modalHeader}
+                    modalBodyHeading1={
+                        ObjectsToUse.HungrysiaObject.modalBodyHeading1
+                    }
+                    modalBodyHeading2={
+                        ObjectsToUse.HungrysiaObject.modalBodyHeading2
+                    }
+                    modalBodyHeading3={
+                        ObjectsToUse.HungrysiaObject.modalBodyHeading3
+                    }
+                    modalBodyHeading4={
+                        ObjectsToUse.HungrysiaObject.modalBodyHeading4
+                    }
+                    modalBodyDescription1={
+                        ObjectsToUse.HungrysiaObject.modalBodyDescription1
+                    }
+                    modalBodyDescription2={
+                        ObjectsToUse.HungrysiaObject.modalBodyDescription2
+                    }
+                    modalBodyDescription3={
+                        ObjectsToUse.HungrysiaObject.modalBodyDescription3
+                    }
+                    modalBodyDescription4={
+                        ObjectsToUse.HungrysiaObject.modalBodyDescription4
+                    }
+                />
+            </Flex>
+        </>
     );
 };
 
