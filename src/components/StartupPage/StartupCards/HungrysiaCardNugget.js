@@ -1,18 +1,9 @@
 import { Text, Heading, IconButton } from "@chakra-ui/react";
 
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalCloseButton,
-    Box,
-} from "@chakra-ui/react";
 import ModalCardComponent from "../../Shared/ModalCardComponent";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import React from "react";
-
+import ModalComponent from "../../Shared/ModalComponent";
 const HungrysiaCardNugget = ({
     onModalOpen,
     isModalOpen,
@@ -41,60 +32,48 @@ const HungrysiaCardNugget = ({
                 that had shut down due to COVID.😷 I reached out to the previous
                 owner and revived it.
             </Text>
-            <Modal
-                isCentered
-                isOpen={isModalOpen}
-                onClose={onModalClose}
-                motionPreset="SlideInBottom"
-                size="5xl"
+            <ModalComponent
+                isModalOpen={isModalOpen}
+                onModalClose={onModalClose}
+                modalHeader={modalHeader}
             >
-                <ModalOverlay />
+                <Heading>{modalBodyHeading1}</Heading>
 
-                <ModalContent>
-                    <ModalHeader>{modalHeader}</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <Box>
-                            <Heading>{modalBodyHeading1}</Heading>
+                <Text fontSize="lg" mb={10}>
+                    {" "}
+                    {modalBodyDescription1}
+                </Text>
+                <Heading>{modalBodyHeading2}</Heading>
+                <Text fontSize="lg" mb={10}>
+                    {modalBodyDescription2}
+                </Text>
 
-                            <Text fontSize="lg" mb={10}>
-                                {" "}
-                                {modalBodyDescription1}
-                            </Text>
-                            <Heading>{modalBodyHeading2}</Heading>
-                            <Text fontSize="lg" mb={10}>
-                                {modalBodyDescription2}
-                            </Text>
+                <Text fontSize="lg" mb={10}>
+                    {modalBodyDescription3}
+                </Text>
+                <Heading>Exit</Heading>
 
-                            <Text fontSize="lg" mb={10}>
-                                {modalBodyDescription3}
-                            </Text>
-                            <Heading>Exit</Heading>
-
-                            <Text fontSize="lg" mb={10}>
-                                {modalBodyDescription4}
-                            </Text>
-                            <Text
-                                fontSize="lg"
-                                mb={4}
-                                style={{
-                                    textDecoration: "underline",
-                                }}
-                            >
-                                Join the Hungrysia@SUTD Telegram Group to order!
-                                <IconButton
-                                    as="a"
-                                    href="https://t.me/sutdhstg"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    icon={<FaExternalLinkAlt />}
-                                    ml={2}
-                                />
-                            </Text>
-                        </Box>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
+                <Text fontSize="lg" mb={10}>
+                    {modalBodyDescription4}
+                </Text>
+                <Text
+                    fontSize="lg"
+                    mb={4}
+                    style={{
+                        textDecoration: "underline",
+                    }}
+                >
+                    Join the Hungrysia@SUTD Telegram Group to order!
+                    <IconButton
+                        as="a"
+                        href="https://t.me/sutdhstg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        icon={<FaExternalLinkAlt />}
+                        ml={2}
+                    />
+                </Text>
+            </ModalComponent>
         </ModalCardComponent>
     );
 };

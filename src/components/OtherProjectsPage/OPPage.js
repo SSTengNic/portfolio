@@ -5,12 +5,11 @@ import SchoolProjectBody from "../SchoolProjectPage/SchoolProjectBody";
 import StartupBody from "../StartupPage/StartupBody";
 import SectionContainer from "../Shared/SectionContainer";
 import PageWithHeader from "../Shared/PageWithHeader";
-
 function OPPage() {
     const ref1 = useRef(null);
     const ref2 = useRef(null);
 
-    const { inViewport: inViewport1 } = useInViewport(ref1, { threshold: 0.7 });
+    const { inViewport: inViewport1 } = useInViewport(ref1, { threshold: 0.4 });
     const { inViewport: inViewport2 } = useInViewport(ref2, { threshold: 0.4 });
 
     const fadeInVariants = {

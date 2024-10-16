@@ -1,19 +1,10 @@
 import { Text, Heading } from "@chakra-ui/react";
 
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalCloseButton,
-    Box,
-    AspectRatio,
-} from "@chakra-ui/react";
+import { AspectRatio } from "@chakra-ui/react";
 
 import React from "react";
 import ModalCardComponent from "../../Shared/ModalCardComponent";
-
+import ModalComponent from "../../Shared/ModalComponent";
 const TCCCardNugget = ({
     onModalOpen,
     isModalOpen,
@@ -42,49 +33,36 @@ const TCCCardNugget = ({
                 inspired by Koi fish🐟, known for effective up pond effectively.
             </Text>
 
-            <Modal
-                isCentered
-                isOpen={isModalOpen}
-                onClose={onModalClose}
-                motionPreset="SlideInBottom"
-                size="3xl"
+            <ModalComponent
+                isModalOpen={isModalOpen}
+                onModalClose={onModalClose}
+                modalHeader={modalHeader}
             >
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalContent>
-                        <ModalHeader>{modalHeader}</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>
-                            <Box>
-                                <Heading mb={2}>{modalBodyHeading1}</Heading>
-                                <AspectRatio ratio={4 / 2} mb={4}>
-                                    <iframe
-                                        src={modalBodyVideo}
-                                        title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen
-                                    ></iframe>
-                                </AspectRatio>
+                <Heading mb={2}>{modalBodyHeading1}</Heading>
+                <AspectRatio ratio={4 / 2} mb={4}>
+                    <iframe
+                        src={modalBodyVideo}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </AspectRatio>
 
-                                <Text fontSize="lg" mb={5}>
-                                    {" "}
-                                    {modalBodyDescription1}
-                                </Text>
-                                <Heading mb={2}>{modalBodyHeading2}</Heading>
-                                <Text fontSize="lg" mb={5}>
-                                    {" "}
-                                    {modalBodyDescription2}
-                                </Text>
-                                <Heading mb={2}>{modalBodyHeading3}</Heading>
-                                <Text fontSize="lg" mb={5}>
-                                    {modalBodyDescription3}
-                                </Text>
-                            </Box>
-                        </ModalBody>
-                    </ModalContent>
-                </ModalContent>
-            </Modal>
+                <Text fontSize="lg" mb={5}>
+                    {" "}
+                    {modalBodyDescription1}
+                </Text>
+                <Heading mb={2}>{modalBodyHeading2}</Heading>
+                <Text fontSize="lg" mb={5}>
+                    {" "}
+                    {modalBodyDescription2}
+                </Text>
+                <Heading mb={2}>{modalBodyHeading3}</Heading>
+                <Text fontSize="lg" mb={5}>
+                    {modalBodyDescription3}
+                </Text>
+            </ModalComponent>
         </ModalCardComponent>
     );
 };
