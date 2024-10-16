@@ -27,7 +27,7 @@ function Profile() {
                         height={isLargerThan768 ? "200px" : "130px"}
                         name="Nicholas Teng"
                         src={profilePic}
-                        borderWidth="4px"
+                        borderWidth="3px"
                         borderColor={themeColor.vibyBlue}
                     />
                     <Container maxW="700px">
@@ -37,10 +37,9 @@ function Profile() {
 
                         <Text fontSize="xl" mb={1}>
                             <b>Backend Developer💾</b> with a passion for{" "}
-                        </Text>
-                        <Text fontSize="xl">
                             <b>AI and entrepreneurship.🚀</b>
                         </Text>
+
                         <Text fontSize="xl">
                             Click {""}
                             <ChakraLink

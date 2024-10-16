@@ -24,13 +24,13 @@ function HomePage() {
 
     const { inViewport: inViewport1 } = useInViewport(ref1, { threshold: 0.7 });
     const { inViewport: inViewport2 } = useInViewport(ref2, { threshold: 0.4 });
-    const { inViewport: inViewport3 } = useInViewport(ref3, { threshold: 0.4 });
-    const { inViewport: inViewport4 } = useInViewport(ref4, { threshold: 0.4 });
+    const { inViewport: inViewport3 } = useInViewport(ref3, { threshold: 0.2 });
+    const { inViewport: inViewport4 } = useInViewport(ref4, { threshold: 0.2 });
     const { inViewport: inViewport5 } = useInViewport(ref5, {
         threshold: 0.05,
     });
-    const { inViewport: inViewport6 } = useInViewport(ref6, { threshold: 0.4 });
-    const { inViewport: inViewport7 } = useInViewport(ref7, { threshold: 0.4 });
+    const { inViewport: inViewport6 } = useInViewport(ref6, { threshold: 0.2 });
+    const { inViewport: inViewport7 } = useInViewport(ref7, { threshold: 0.2 });
 
     const fadeInVariants = {
         hidden: { opacity: 0 }, // Start completely transparent

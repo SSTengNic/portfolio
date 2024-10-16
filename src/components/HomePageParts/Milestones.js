@@ -25,7 +25,7 @@ const milestones = [
     {
         id: 1,
         title: "Computer Science and Design (CSD) and Masters in Technological Entrepreneurship",
-        categories: ["University Scholarship"],
+        categories: ["Scholarship"],
         icon: SUTDLogo,
         description: [
             "Awarded the prestigious SUTD Technology and Entrepreneurship Program (STEP) Scholarship in 2021.",
@@ -97,10 +97,9 @@ const milestones = [
         link: "/Internships",
     },
 ];
-
 const Milestones = () => {
     return (
-        <Container maxWidth="4xl" p={{ base: 2, sm: 10 }}>
+        <Container maxWidth="4xl" p={{ base: 2, sm: 10 }} overflow="hidden">
             {milestones.map((milestone, index) => (
                 <Milestone key={index} milestone={milestone} />
             ))}
@@ -182,6 +181,7 @@ const MilestoneCard = ({ milestone }) => {
                 //     left: "-15px",
                 //     display: "block",
                 // }}
+                overflow="hidden"
             >
                 <Avatar
                     borderWidth="2px" // Set the border width here
@@ -191,7 +191,7 @@ const MilestoneCard = ({ milestone }) => {
                     objectFit="cover"
                     bg="white"
                 />
-                <Box>
+                <Box overflow="hidden">
                     <HStack spacing={2} mb={1}>
                         {categories.map((cat) => (
                             <Text fontSize="sm" key={cat}>
@@ -199,7 +199,12 @@ const MilestoneCard = ({ milestone }) => {
                             </Text>
                         ))}
                     </HStack>
-                    <VStack spacing={2} mb={3} textAlign="left">
+                    <VStack
+                        spacing={2}
+                        mb={3}
+                        textAlign="left"
+                        overflow="hidden"
+                    >
                         <chakra.h1
                             // as={Link}
                             // _hover={{ color: "teal.400" }}
@@ -212,7 +217,7 @@ const MilestoneCard = ({ milestone }) => {
                         >
                             {title}
                         </chakra.h1>
-                        <Text fontSize="md" noOfLines={10}>
+                        <Text fontSize="md" noOfLines={20}>
                             <UnorderedList spacing={3}>
                                 {description.map((point, index) => (
                                     <ListItem key={index}>{point}</ListItem>
