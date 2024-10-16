@@ -1,7 +1,6 @@
 {
   "files": {
-    "main.js": "/portfolio/static/js/main.7eaa5329.js",
-    "static/js/787.a8a21f2e.chunk.js": "/portfolio/static/js/787.a8a21f2e.chunk.js",
+    "main.js": "/portfolio/static/js/main.e09d0e35.js",
     "static/media/School_Projects_Card_Front_Page.jpg": "/portfolio/static/media/School_Projects_Card_Front_Page.a360c148ba3958ae7274.jpg",
     "static/media/headshot_1.jpg": "/portfolio/static/media/headshot_1.2ffe957c55334e47696b.jpg",
     "static/media/1TCC_Pic_Of_Me_Edited_2.jpg": "/portfolio/static/media/1TCC_Pic_Of_Me_Edited_2.3b31854968ec7cc87d8b.jpg",
@@ -13,10 +12,9 @@
     "static/media/HungrySiaLogo.jpg": "/portfolio/static/media/HungrySiaLogo.82814916140d5b7269ee.jpg",
     "static/media/PinchPromoLogo2.png": "/portfolio/static/media/PinchPromoLogo2.5b530911d1ff1d5d29c0.png",
     "index.html": "/portfolio/index.html",
-    "main.7eaa5329.js.map": "/portfolio/static/js/main.7eaa5329.js.map",
-    "787.a8a21f2e.chunk.js.map": "/portfolio/static/js/787.a8a21f2e.chunk.js.map"
+    "main.e09d0e35.js.map": "/portfolio/static/js/main.e09d0e35.js.map"
   },
   "entrypoints": [
-    "static/js/main.7eaa5329.js"
+    "static/js/main.e09d0e35.js"
   ]
 }
