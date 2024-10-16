@@ -1,32 +1,22 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.adb67f9f.css",
-    "main.js": "/portfolio/static/js/main.c17c54a1.js",
+    "main.js": "/portfolio/static/js/main.7eaa5329.js",
     "static/js/787.a8a21f2e.chunk.js": "/portfolio/static/js/787.a8a21f2e.chunk.js",
     "static/media/School_Projects_Card_Front_Page.jpg": "/portfolio/static/media/School_Projects_Card_Front_Page.a360c148ba3958ae7274.jpg",
-    "static/media/FullStack Certificate.png": "/portfolio/static/media/FullStack Certificate.24bd8c4f4432825760fa.png",
-    "static/media/python.png": "/portfolio/static/media/python.4f5f52c67194dc46e313.png",
-    "static/media/new_profile_pic.jpg": "/portfolio/static/media/new_profile_pic.680f2cab17a3c947b4b7.jpg",
-    "static/media/UiPath_RPA_Developer_Advanced_Cert.jpg": "/portfolio/static/media/UiPath_RPA_Developer_Advanced_Cert.7727fca3f642e4c8706b.jpg",
+    "static/media/headshot_1.jpg": "/portfolio/static/media/headshot_1.2ffe957c55334e47696b.jpg",
+    "static/media/1TCC_Pic_Of_Me_Edited_2.jpg": "/portfolio/static/media/1TCC_Pic_Of_Me_Edited_2.3b31854968ec7cc87d8b.jpg",
+    "static/media/UCB_logo.png": "/portfolio/static/media/UCB_logo.144e2dc9048dc000c695.png",
+    "static/media/New_Web_App_Pic.png": "/portfolio/static/media/New_Web_App_Pic.99e0047796c64874c907.png",
     "static/media/Bloglist_Page.png": "/portfolio/static/media/Bloglist_Page.2d3fee968b128b0c8c51.png",
-    "static/media/Ngee_Ann_Polytechnic_logo.jpg": "/portfolio/static/media/Ngee_Ann_Polytechnic_logo.70e2a0db981302f5da33.jpg",
+    "static/media/SimplifyNextLogo.png": "/portfolio/static/media/SimplifyNextLogo.6b92069b0e0ae2c53c84.png",
     "static/media/PinchPromoLogo.jpg": "/portfolio/static/media/PinchPromoLogo.4f50c7d0e2e427a29bf2.jpg",
-    "static/media/Certs_pic.jpg": "/portfolio/static/media/Certs_pic.da61cac6603a487abda4.jpg",
     "static/media/HungrySiaLogo.jpg": "/portfolio/static/media/HungrySiaLogo.82814916140d5b7269ee.jpg",
-    "static/media/Machine_Learning_Card_Picture.png": "/portfolio/static/media/Machine_Learning_Card_Picture.8c52c21646ffc56f77db.png",
-    "static/media/mySQL.png": "/portfolio/static/media/mySQL.4676ad983d6bd3e9fac9.png",
-    "static/media/github.png": "/portfolio/static/media/github.ed1c06d925fff0b57e32.png",
-    "static/media/slick.svg": "/portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/portfolio/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/PinchPromoLogo2.png": "/portfolio/static/media/PinchPromoLogo2.5b530911d1ff1d5d29c0.png",
     "index.html": "/portfolio/index.html",
-    "main.adb67f9f.css.map": "/portfolio/static/css/main.adb67f9f.css.map",
-    "main.c17c54a1.js.map": "/portfolio/static/js/main.c17c54a1.js.map",
+    "main.7eaa5329.js.map": "/portfolio/static/js/main.7eaa5329.js.map",
     "787.a8a21f2e.chunk.js.map": "/portfolio/static/js/787.a8a21f2e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.adb67f9f.css",
-    "static/js/main.c17c54a1.js"
+    "static/js/main.7eaa5329.js"
   ]
 }
