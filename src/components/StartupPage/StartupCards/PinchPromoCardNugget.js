@@ -1,11 +1,4 @@
-import {
-    Text,
-    Image,
-    Stack,
-    Heading,
-    IconButton,
-    Link,
-} from "@chakra-ui/react";
+import { Text, Heading, IconButton, Link } from "@chakra-ui/react";
 
 import {
     Modal,

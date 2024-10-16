@@ -1,13 +1,7 @@
 import {
     Text,
-    Card,
-    CardBody,
-    Image,
-    Stack,
     Heading,
     IconButton,
-    Button,
-    Link,
     List,
     ListItem,
     ListIcon,
@@ -22,7 +16,6 @@ import {
     ModalBody,
     ModalCloseButton,
     Box,
-    AspectRatio,
 } from "@chakra-ui/react";
 
 import { FaExternalLinkAlt } from "react-icons/fa";

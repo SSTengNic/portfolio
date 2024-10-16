@@ -1,12 +1,4 @@
-import {
-    Text,
-    Card,
-    CardBody,
-    Image,
-    Stack,
-    Heading,
-    Button,
-} from "@chakra-ui/react";
+import { Text, Heading } from "@chakra-ui/react";
 
 import {
     Modal,
@@ -19,9 +11,7 @@ import {
     AspectRatio,
 } from "@chakra-ui/react";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
-import React, { Component } from "react";
-import ReactPlayer from "react-player";
+import React from "react";
 import ModalCardComponent from "../../Shared/ModalCardComponent";
 
 const TCCCardNugget = ({

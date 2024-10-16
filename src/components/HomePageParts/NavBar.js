@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 import themeColors from "../Shared/Colors";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link as RouterLink } from "react-router-dom";
 
 function NavBar({ headerText = "Nicholas Teng" }) {
     const [isShrunk, setIsShrunk] = useState(false);

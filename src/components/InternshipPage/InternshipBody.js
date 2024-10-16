@@ -1,7 +1,6 @@
 import { Text, useDisclosure, Flex } from "@chakra-ui/react";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
-import React, { Component } from "react";
+import React from "react";
 import SimplifyNextCardNugget from "./InternshipCards/SimplifyNextCardNugget";
 import TCCCardNugget from "./InternshipCards/TCCCardNugget";
 

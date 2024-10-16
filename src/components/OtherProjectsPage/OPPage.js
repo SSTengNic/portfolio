@@ -1,11 +1,8 @@
 import { React, useRef, useEffect, useState } from "react";
-import HomeHeader from "../Shared/HomeHeader";
-import { VStack } from "@chakra-ui/react";
 import { useInViewport } from "react-in-viewport";
 
 import SchoolProjectBody from "../SchoolProjectPage/SchoolProjectBody";
 import StartupBody from "../StartupPage/StartupBody";
-import themeColors from "../Shared/Colors";
 import SectionContainer from "../Shared/SectionContainer";
 import PageWithHeader from "../Shared/PageWithHeader";
 

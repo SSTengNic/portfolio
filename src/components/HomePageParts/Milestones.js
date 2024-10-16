@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Box,
     chakra,
     Container,
-    Link,
     Text,
     HStack,
     VStack,
     Flex,
-    Icon,
     ListItem,
     UnorderedList,
     Avatar,
 } from "@chakra-ui/react";
-import { FaGraduationCap, FaSeedling, FaBriefcase } from "react-icons/fa6";
 import SUTDLogo from "../../pictures/MilestonePics/SUTD_Logo.png";
 import SimplifyNextLogo from "../../pictures/MilestonePics/SimplifyNextLogo.png";
 
@@ -24,7 +21,6 @@ import TCCLogo from "../../pictures/MilestonePics/1TCCLogo.jpg";
 import { IconType } from "react-icons";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import TimelineModal from "./TimelineModal";
 const milestones = [
     {
         id: 1,
@@ -153,15 +149,15 @@ const Milestone = ({ milestone }: MilestoneProps) => {
 const MilestoneCard = ({ milestone }) => {
     const { title, categories, description, icon, date } = milestone;
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleOpenModal = () => {
-        setIsModalOpen(true);
-    };
+    // const handleOpenModal = () => {
+    //     setIsModalOpen(true);
+    // };
 
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
-    };
+    // const handleCloseModal = () => {
+    //     setIsModalOpen(false);
+    // };
 
     return (
         <>

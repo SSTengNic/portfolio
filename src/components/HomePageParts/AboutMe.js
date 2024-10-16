@@ -1,11 +1,4 @@
-import {
-    Container,
-    Text,
-    Avatar,
-    Stack,
-    HStack,
-    Link as ChakraLink,
-} from "@chakra-ui/react";
+import { Container, Text, Link as ChakraLink } from "@chakra-ui/react";
 import themeColor from "../Shared/Colors";
 const AboutMe = () => {
     return (

@@ -1,35 +1,5 @@
-import {
-    Container,
-    Text,
-    Tab,
-    TabList,
-    TabPanels,
-    TabPanel,
-    Tabs,
-    Card,
-    CardBody,
-    Image,
-    Stack,
-    Heading,
-    useDisclosure,
-    Button,
-    List,
-    ListItem,
-    ListIcon,
-} from "@chakra-ui/react";
-import { MdCheckCircle } from "react-icons/md";
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalCloseButton,
-    IconButton,
-    Box,
-    Flex,
-} from "@chakra-ui/react";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { Text, useDisclosure } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 import React from "react";
 import BloglistPic from "../../pictures/WebAppPage_Thumbnails/Bloglist_Page.png";

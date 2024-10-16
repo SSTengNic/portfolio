@@ -2,7 +2,6 @@ import {
     Container,
     Text,
     Avatar,
-    Stack,
     HStack,
     Flex,
     useMediaQuery,
