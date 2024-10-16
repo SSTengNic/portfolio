@@ -9,7 +9,6 @@ import { Helmet } from "react-helmet";
 import HomePage from "./components/HomePageParts/HomePage";
 import OPPage from "./components/OtherProjectsPage/OPPage";
 import MLProjectsPage from "./components/MLProjectsPage/MLProjectsPage";
-import CertificatesPage from "./components/CertificatePage/CertificatePage";
 import WebAppPage from "./components/WebAppPage/WebAppPage";
 import InternshipPage from "./components/InternshipPage/InternshipPage";
 function ScrollToTopOnMount() {
@@ -36,7 +35,6 @@ function App() {
                 <Route path="/portfolio" element={<HomePage />} />
                 <Route path="/StartupMisc" element={<OPPage />} />
                 <Route path="/MLProjects" element={<MLProjectsPage />} />
-                <Route path="/Certificates" element={<CertificatesPage />} />
                 <Route path="/WebappProjects" element={<WebAppPage />} />
                 <Route path="/Internships" element={<InternshipPage />} />
             </Routes>

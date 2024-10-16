@@ -67,11 +67,11 @@ const CardComponent = ({ image, heading, description, link }) => {
             mx="auto"
             maxH="xl"
             borderRadius="xl"
-            backgroundColor={themeColors.vibyBlue}
+            backgroundColor={themeColors.justWhite}
         >
             <Card
                 borderRadius="xl"
-                backgroundColor={themeColors.vibyBlue}
+                backgroundColor={themeColors.justWhite}
                 cursor="pointer"
                 overflow="hidden"
                 _hover={{ boxShadow: "xl" }} // Hover effect
@@ -96,7 +96,7 @@ const CardComponent = ({ image, heading, description, link }) => {
                             bg="black" // Use any color you like
                             borderRadius="full" // Make it rounded
                         />
-                        <Stack textAlign="center" mt="6" spacing="3">
+                        <Stack textAlign="center" mt="3" spacing="3">
                             <Heading size="md">{heading}</Heading>
                             <Text>{description}</Text>
                         </Stack>

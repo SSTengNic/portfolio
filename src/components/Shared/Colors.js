@@ -1,6 +1,7 @@
 const themeColors = {
     sunnyYellow: "#fffbe7",
-    vibyBlue: "#ddf0ff",
+    vibyBlue: "#9cd3ff",
+    justWhite: "#ffffff",
 };
 
 export default themeColors;

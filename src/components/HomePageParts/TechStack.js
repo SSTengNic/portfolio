@@ -1,5 +1,12 @@
 import { Box, Tooltip, Text, Grid, HStack } from "@chakra-ui/react";
-import { FaPython, FaReact, FaDocker, FaRobot } from "react-icons/fa";
+import {
+    FaPython,
+    FaReact,
+    FaDocker,
+    FaRobot,
+    FaDatabase,
+    FaAws,
+} from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
     SiMysql,
@@ -7,10 +14,12 @@ import {
     SiDeno,
     SiAstro,
     SiSvelte,
+    SiAwslambda,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaGitAlt } from "react-icons/fa6";
-
+import { GiBeanstalk } from "react-icons/gi";
+import themeColor from "../Shared/Colors";
 // Categorize the tech icons
 const languages = [
     { icon: <IoLogoJavascript />, label: "JavaScript" },
@@ -36,6 +45,14 @@ const backend = [
     { icon: <BiLogoPostgresql />, label: "PostgreSQL" },
 ];
 
+const aws = [
+    { icon: <SiAwslambda />, label: "Lambda" },
+    { icon: <FaDatabase />, label: "DynamoDB" },
+    { icon: <GiBeanstalk />, label: "Beanstalk" },
+
+    { icon: <FaAws />, label: "AWS RDS" },
+];
+
 const TechStackCard = ({ title, items }) => {
     return (
         <Grid
@@ -46,11 +63,11 @@ const TechStackCard = ({ title, items }) => {
             borderRadius="md"
             p={4}
             boxShadow="md"
-            bg="#ddf0ff"
+            bg={themeColor.justWhite}
             textAlign="center"
             height="225px"
         >
-            <Text fontSize="2xl" fontWeight="bold" mb={4}>
+            <Text fontSize="2xl" mb={4}>
                 {title}
             </Text>
             <Box>
@@ -92,6 +109,7 @@ const TechStack = () => {
                 <TechStackCard title="Software" items={software} />
                 <TechStackCard title="Frontend" items={frontend} />
                 <TechStackCard title="Backend" items={backend} />
+                <TechStackCard title="AWS" items={aws} />
             </HStack>
         </>
     );

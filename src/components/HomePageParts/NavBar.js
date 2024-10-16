@@ -29,6 +29,25 @@ function NavBar({ headerText = "Nicholas Teng" }) {
         setIsShrunk(scrollTop > 20);
     };
 
+    const scrollToSectionOffset = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        console.log("section: ", section);
+        let offset;
+        if (section) {
+            const sectionTop =
+                section.getBoundingClientRect().top + window.scrollY;
+            if (sectionId === "section1") {
+                offset = 220;
+            } else {
+                offset = 100;
+            }
+            window.scrollTo({
+                top: sectionTop - offset,
+                behavior: "smooth",
+            });
+        }
+    };
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => {
@@ -85,19 +104,6 @@ function NavBar({ headerText = "Nicholas Teng" }) {
             )
         );
 
-    const scrollToSectionOffset = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            const sectionTop =
-                section.getBoundingClientRect().top + window.scrollY;
-            const offset = 100;
-            window.scrollTo({
-                top: sectionTop - offset,
-                behavior: "smooth",
-            });
-        }
-    };
-
     return (
         <>
             <Flex
@@ -118,7 +124,18 @@ function NavBar({ headerText = "Nicholas Teng" }) {
                     mt="5px"
                     transition="font-size 0.3s ease"
                 >
-                    {headerText}
+                    {" "}
+                    <ChakraLink
+                        onClick={() => {
+                            scrollToSectionOffset("section1");
+                        }}
+                        _hover={{
+                            textDecoration: "none",
+                            borderBottom: "2px solid black",
+                        }}
+                    >
+                        {headerText}
+                    </ChakraLink>
                 </Heading>
                 <Spacer />
 

@@ -6,6 +6,7 @@ import {
     HStack,
     Flex,
     useMediaQuery,
+    Link as ChakraLink,
 } from "@chakra-ui/react";
 import profilePic from "../../pictures/HomePagePics/headshot_1.jpg";
 import React from "react";
@@ -39,7 +40,38 @@ function Profile() {
                         <Text fontSize="xl">
                             <b>AI and entrepreneurship.🚀</b>
                         </Text>
-                        <Text fontSize="xl">Click here for my resume.</Text>
+                        <Text fontSize="xl">
+                            Click {""}
+                            <ChakraLink
+                                href={`${process.env.PUBLIC_URL}/Nicholas_Resume.pdf`} // Update the path to your actual PDF file
+                                download="Nicholas_Resume.pdf" // This triggers the download
+                                _hover={{
+                                    textDecoration: "none",
+                                    borderBottom: "2px solid black",
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        color: "#9cd3ff",
+                                        fontWeight: "bold",
+                                        display: "inline-block", // Ensures the transform works
+                                        transition:
+                                            "transform 0.1s ease-in-out", // Smooth transition
+                                    }}
+                                    onMouseEnter={(e) =>
+                                        (e.target.style.transform =
+                                            "translateY(-2px)")
+                                    } // Move up by 3px on hover
+                                    onMouseLeave={(e) =>
+                                        (e.target.style.transform =
+                                            "translateY(0)")
+                                    } // Reset position when not hovered
+                                >
+                                    here
+                                </span>
+                            </ChakraLink>{" "}
+                            for my resume.
+                        </Text>
                     </Container>
                 </HStack>
             </Container>

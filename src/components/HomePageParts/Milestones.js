@@ -205,14 +205,14 @@ const MilestoneCard = ({ milestone }) => {
                     </HStack>
                     <VStack spacing={2} mb={3} textAlign="left">
                         <chakra.h1
-                            as={Link}
-                            _hover={{ color: "teal.400" }}
+                            // as={Link}
+                            // _hover={{ color: "teal.400" }}
                             fontSize="2xl"
                             lineHeight={1.1}
                             fontWeight="bold"
                             w="100%"
-                            onClick={handleOpenModal} // Open modal on click
-                            cursor="pointer" // Add cursor pointer to indicate clickability
+                            // onClick={handleOpenModal} // Open modal on click
+                            // cursor="pointer" // Add cursor pointer to indicate clickability
                         >
                             {title}
                         </chakra.h1>
@@ -226,11 +226,11 @@ const MilestoneCard = ({ milestone }) => {
                     </VStack>
                 </Box>
             </HStack>
-            <TimelineModal
+            {/* <TimelineModal
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 milestone={milestone}
-            />
+            /> */}
         </>
     );
 };
