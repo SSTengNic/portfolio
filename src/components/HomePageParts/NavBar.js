@@ -15,6 +15,7 @@ import {
     DrawerHeader,
     VStack,
     HStack,
+    useMediaQuery,
 } from "@chakra-ui/react";
 import themeColors from "../Shared/Colors";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -22,6 +23,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 function NavBar({ headerText = "Nicholas Teng" }) {
     const [isShrunk, setIsShrunk] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
     const handleScroll = () => {
         const scrollTop = window.scrollY;
@@ -123,11 +125,8 @@ function NavBar({ headerText = "Nicholas Teng" }) {
                     mt="5px"
                     transition="font-size 0.3s ease"
                 >
-                    {" "}
                     <ChakraLink
-                        onClick={() => {
-                            scrollToSectionOffset("section1");
-                        }}
+                        onClick={() => scrollToSectionOffset("section1")}
                         _hover={{
                             textDecoration: "none",
                             borderBottom: "2px solid black",
@@ -137,33 +136,39 @@ function NavBar({ headerText = "Nicholas Teng" }) {
                     </ChakraLink>
                 </Heading>
                 <Spacer />
-
-                <HStack spacing={5} mr={5}>
-                    {renderLinks()}
-                </HStack>
-                <IconButton
-                    aria-label="Open Menu"
-                    icon={<GiHamburgerMenu />}
-                    display={{ base: "flex", md: "none" }}
-                    onClick={onOpen}
-                    variant="outline"
-                    mr={2}
-                />
+                {isLargerThan768 ? (
+                    <HStack spacing={5} mr={5}>
+                        {renderLinks()}
+                    </HStack>
+                ) : (
+                    <>
+                        <IconButton
+                            aria-label="Open Menu"
+                            icon={<GiHamburgerMenu />}
+                            display={{ base: "flex", md: "none" }}
+                            onClick={onOpen}
+                            variant="outline"
+                            mr={2}
+                        />
+                        <Drawer
+                            isOpen={isOpen}
+                            placement="right"
+                            onClose={onClose}
+                        >
+                            <DrawerOverlay />
+                            <DrawerContent>
+                                <DrawerCloseButton />
+                                <DrawerHeader>{headerText}</DrawerHeader>
+                                <DrawerBody>
+                                    <VStack spacing={4} align="start">
+                                        {renderLinks(true)}
+                                    </VStack>
+                                </DrawerBody>
+                            </DrawerContent>
+                        </Drawer>
+                    </>
+                )}
             </Flex>
-
-            <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-                <DrawerOverlay />
-                <DrawerContent>
-                    <DrawerCloseButton />
-                    <DrawerHeader>{headerText}</DrawerHeader>
-                    <DrawerBody>
-                        <VStack spacing={4} align="start">
-                            {renderLinks(true)}
-                        </VStack>
-                    </DrawerBody>
-                </DrawerContent>
-            </Drawer>
-
             <ScrollProgressBar />
         </>
     );

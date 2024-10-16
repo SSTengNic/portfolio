@@ -11,7 +11,6 @@ const PageWithHeader = ({ children, HomeHeaderText }) => {
             // spacing="8rem"
             align="stretch"
             bg={themeColors.sunnyYellow}
-            p={3}
         >
             <HomeHeader HomeHeaderText={HomeHeaderText} />
             {children}

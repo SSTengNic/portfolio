@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import profilePic from "../../pictures/HomePagePics/headshot_1.jpg";
 import React from "react";
-
+import themeColor from "../Shared/Colors";
 function Profile() {
     // Media query to check if the screen width is larger than 768px
     const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
@@ -27,6 +27,8 @@ function Profile() {
                         height={isLargerThan768 ? "200px" : "130px"}
                         name="Nicholas Teng"
                         src={profilePic}
+                        borderWidth="4px"
+                        borderColor={themeColor.vibyBlue}
                     />
                     <Container maxW="700px">
                         <Text fontSize="3xl" mt={7} mb={2}>
