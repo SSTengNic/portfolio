@@ -23,7 +23,7 @@ const ModalComponent = ({
             size="3xl"
         >
             <ModalOverlay />
-            <ModalContent maxHeight="95vh" overflowY="auto" maxWidth="80vw">
+            <ModalContent maxHeight="90vh" overflowY="auto" maxWidth="70vw">
                 {" "}
                 <ModalHeader>{modalHeader}</ModalHeader>
                 <ModalCloseButton />

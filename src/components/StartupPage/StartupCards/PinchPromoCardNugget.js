@@ -1,17 +1,8 @@
-import { Text, Heading, IconButton, Link } from "@chakra-ui/react";
+import { Text, Heading } from "@chakra-ui/react";
 
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalCloseButton,
-    Box,
-} from "@chakra-ui/react";
+import { AspectRatio } from "@chakra-ui/react";
 import ModalCardComponent from "../../Shared/ModalCardComponent";
-
-import { FaExternalLinkAlt } from "react-icons/fa";
+import ModalComponent from "../../Shared/ModalComponent";
 import React from "react";
 const PinchPromoCardNugget = ({
     heading,
@@ -44,55 +35,40 @@ const PinchPromoCardNugget = ({
                 to learn more.
             </Text>
 
-            <Modal
-                isCentered
-                isOpen={isModalOpen}
-                onClose={onModalClose}
-                motionPreset="slideInBottom"
-                size="5xl"
+            <ModalComponent
+                isModalOpen={isModalOpen}
+                onModalClose={onModalClose}
+                modalHeader={modalHeader}
             >
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>{modalHeader}</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <Box>
-                            <Heading>{modalBodyHeading1}</Heading>
-                            <Text fontSize="lg" mb={4}>
-                                {modalBodyDescription1}
-                            </Text>
+                <Heading>{modalBodyHeading1}</Heading>
+                <AspectRatio ratio={4 / 2} mb={6}>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src={modalBodyVideo}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+                </AspectRatio>
+                <Text fontSize="lg" mb={4} mt={3}>
+                    {modalBodyDescription1}
+                </Text>
 
-                            <Heading>{modalBodyHeading2}</Heading>
-                            <Text fontSize="lg" mb={4}>
-                                {modalBodyDescription2}
-                            </Text>
-                            <Text fontSize="lg" mb={4}>
-                                {modalBodyDescription3}
-                            </Text>
+                <Heading>{modalBodyHeading2}</Heading>
+                <Text fontSize="lg" mb={4}>
+                    {modalBodyDescription2}
+                </Text>
+                <Text fontSize="lg" mb={4}>
+                    {modalBodyDescription3}
+                </Text>
 
-                            <Heading>{modalBodyHeading4}</Heading>
-                            <Link
-                                href={modalBodyVideo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                textDecoration="underline"
-                            >
-                                {modalBodyHeading4}
-                                <IconButton
-                                    as="span"
-                                    icon={<FaExternalLinkAlt />}
-                                    ml={2}
-                                />
-                            </Link>
-
-                            <Heading>{modalBodyHeading5}</Heading>
-                            <Text fontSize="lg" mb={4}>
-                                {modalBodyDescription5}
-                            </Text>
-                        </Box>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
+                <Heading>{modalBodyHeading5}</Heading>
+                <Text fontSize="lg" mb={4}>
+                    {modalBodyDescription5}
+                </Text>
+            </ModalComponent>
         </ModalCardComponent>
     );
 };

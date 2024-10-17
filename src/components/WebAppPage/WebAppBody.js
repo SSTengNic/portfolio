@@ -54,7 +54,7 @@ const WebAppBody = () => {
                         ObjectsToUse.BloglistObject.modalBodyDescription4
                     }
                     modalBodyDescription5={
-                        ObjectsToUse.BloglistObject.modalBodyDescription4
+                        ObjectsToUse.BloglistObject.modalBodyDescription5
                     }
                 />
             </Flex>

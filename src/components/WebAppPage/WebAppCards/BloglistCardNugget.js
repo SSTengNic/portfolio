@@ -34,9 +34,9 @@ const BloglistCardNugget = ({
             heading={heading}
         >
             <Text textAlign="left" ml={2} mb={3} spacing="">
-                I developed <b>two versions</b> of a blog list: one using the
-                MERN stack and another utilizing MySQL database💽. Click to
-                explore their features!🙂
+                I built <b>two versions</b> of a blog list: one using{" "}
+                <b>MERN stack with MongoDB</b> and another utilizing{" "}
+                <b>MySQL database💽.</b> Click to explore their features!🙂
             </Text>
             <ModalComponent
                 isModalOpen={isModalOpen}
@@ -44,9 +44,9 @@ const BloglistCardNugget = ({
                 modalHeader={modalHeader}
             >
                 <Heading>{modalBodyHeading1} </Heading>
-                <Text fontSize="lg" mb={4}>
+                {/* <Text fontSize="lg" mb={4}>
                     {modalBodyDescription1}.{" "}
-                </Text>
+                </Text> */}
                 <Text fontSize="lg" mb={4}>
                     {modalBodyDescription2}
                 </Text>
@@ -64,18 +64,18 @@ const BloglistCardNugget = ({
                         </ListItem>
                         <ListItem>
                             <ListIcon as={MdCheckCircle} color="green.500" />
-                            Passwords are secured via encryption using JSON Web
-                            Tokens (JWT) and bcrypt.
+                            Passwords are secured via encryption using{" "}
+                            <b>JSON Web Tokens(JWT)</b> and <b>bcrypt.</b>
                         </ListItem>
                         <ListItem>
                             <ListIcon as={MdCheckCircle} color="green.500" />
-                            Blog posts include essential details like name,
-                            author, and URL.
+                            Blog posts include essential details like{" "}
+                            <b>name, author,</b> and <b>URL.</b>
                         </ListItem>
                         <ListItem>
                             <ListIcon as={MdCheckCircle} color="green.500" />
                             Only blog creators can delete their posts, enforced
-                            in both frontend and backend.
+                            in <b>both frontend and backend.</b>
                         </ListItem>
                         <ListItem>
                             <ListIcon as={MdCheckCircle} color="green.500" />
@@ -84,7 +84,8 @@ const BloglistCardNugget = ({
                         </ListItem>
                         <ListItem>
                             <ListIcon as={MdCheckCircle} color="green.500" />
-                            Separate versions for MySQL and MongoDB databases.{" "}
+                            Separate versions for <b>MySQL</b> and{" "}
+                            <b>MongoDB databases.</b>
                         </ListItem>
                     </List>
                 </Text>
@@ -95,7 +96,7 @@ const BloglistCardNugget = ({
                         textDecoration: "underline",
                     }}
                 >
-                    Link to Github Repo
+                    <b>Link to Github Repo</b>
                     <IconButton
                         as="a"
                         href="https://github.com/SSTengNic/BloglistWebApp"
@@ -110,7 +111,9 @@ const BloglistCardNugget = ({
                 <Text fontSize="lg" mb={4}>
                     {modalBodyDescription4}{" "}
                 </Text>
-                <Text>{modalBodyDescription5}</Text>
+                <Text fontSize="lg" mb={4}>
+                    {modalBodyDescription5}
+                </Text>
             </ModalComponent>
         </ModalCardComponent>
     );

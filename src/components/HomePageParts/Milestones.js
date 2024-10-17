@@ -53,7 +53,7 @@ const milestones = [
         icon: PinchPromoLogo,
         description: [
             "Co-founded a startup that revolutionized promotion claiming through gamification.",
-            "Successfully secured partnerships with over 5 businesses, convincing them to share exclusive promotions on our web application.",
+            "Successfully secured partnerships with approximately a dozen businesses, convincing them to share exclusive promotions on our web application.",
             "Served as the software testing engineer, writing E2E tests using Cypress.",
         ],
         date: "Apr 2023 - Aug 2023",

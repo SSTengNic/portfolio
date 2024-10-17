@@ -37,7 +37,7 @@ const RCKCardNugget = ({
                 modalHeader={modalHeader}
             >
                 <Heading mb={2}>{modalBodyHeading1}</Heading>
-                <AspectRatio ratio={4 / 2} mb={4}>
+                <AspectRatio ratio={4 / 2} mb={6}>
                     <iframe
                         width="560"
                         height="315"
@@ -48,7 +48,7 @@ const RCKCardNugget = ({
                         allowfullscreen
                     ></iframe>
                 </AspectRatio>
-                <Text fontSize="lg" mb={5}>
+                <Text fontSize="lg" mb={4}>
                     {" "}
                     {modalBodyDescription1}
                 </Text>
@@ -65,7 +65,7 @@ const RCKCardNugget = ({
                     mb={4}
                     style={{ textDecoration: "underline" }}
                 >
-                    Comprehensive Documentation of RCK
+                    <b>Comprehensive Documentation of RCK</b>
                     <IconButton
                         as="a"
                         href="http://asd.courses.sutd.edu.sg/dti-teams/dti-part-4/"

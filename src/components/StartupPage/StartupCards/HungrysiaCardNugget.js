@@ -39,21 +39,21 @@ const HungrysiaCardNugget = ({
             >
                 <Heading>{modalBodyHeading1}</Heading>
 
-                <Text fontSize="lg" mb={10}>
+                <Text fontSize="lg" mb={4}>
                     {" "}
                     {modalBodyDescription1}
                 </Text>
                 <Heading>{modalBodyHeading2}</Heading>
-                <Text fontSize="lg" mb={10}>
+                <Text fontSize="lg" mb={4}>
                     {modalBodyDescription2}
                 </Text>
 
-                <Text fontSize="lg" mb={10}>
+                <Text fontSize="lg" mb={4}>
                     {modalBodyDescription3}
                 </Text>
                 <Heading>Exit</Heading>
 
-                <Text fontSize="lg" mb={10}>
+                <Text fontSize="lg" mb={4}>
                     {modalBodyDescription4}
                 </Text>
                 <Text
@@ -63,7 +63,7 @@ const HungrysiaCardNugget = ({
                         textDecoration: "underline",
                     }}
                 >
-                    Join the Hungrysia@SUTD Telegram Group to order!
+                    <b>Join the Hungrysia@SUTD Telegram Group to order!</b>
                     <IconButton
                         as="a"
                         href="https://t.me/sutdhstg"
