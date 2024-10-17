@@ -149,6 +149,8 @@ function NavBar({ headerText = "Nicholas Teng" }) {
                             onClick={onOpen}
                             variant="outline"
                             mr={2}
+                            borderWidth="1px"
+                            borderColor="black"
                         />
                         <Drawer
                             isOpen={isOpen}

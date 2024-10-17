@@ -143,6 +143,8 @@ const HomeHeader = ({ HomeHeaderText }) => {
                         onClick={onOpen}
                         variant="outline"
                         mr={2}
+                        borderWidth="1px"
+                        borderColor="black"
                     />
                     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
                         <DrawerOverlay />
