@@ -28,9 +28,8 @@ const ModalCardComponent = ({
                 <CardBody p={0} onClick={onModalOpen} cursor="pointer">
                     <Image
                         src={thumbnailPic}
-                        alt="RCK Pic"
-                        borderTopRadius="xl" // Rounds the top of the
-                        image
+                        alt="Pic"
+                        borderTopRadius="xl"
                         h="350px"
                         w="100%"
                         objectFit="cover"

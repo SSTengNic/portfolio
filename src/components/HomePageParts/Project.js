@@ -17,7 +17,7 @@ import webAppPic from "../../pictures/HomePagePics/New_Web_App_Pic.png";
 import PersonalProjectPic from "../../pictures/School_Projects_Card_Front_Page.jpg";
 import InternshipPic from "../../pictures/HomePagePics/1TCC_Pic_Of_Me_Edited_2.jpg";
 import themeColors from "../Shared/Colors";
-
+import PinchPromoLogoPic from "../../pictures/PinchPromoLogo.jpg";
 const Project = () => {
     return (
         <Center flexDirection="column" p={5}>
@@ -31,7 +31,7 @@ const Project = () => {
                 maxW="1200px" // Set a maximum width for the grid to center it
             >
                 <CardComponent
-                    image={PersonalProjectPic}
+                    image={PinchPromoLogoPic}
                     heading="Startup/Misc Projects"
                     description="Various startup and university projects completed so far."
                     link="/StartupMisc"

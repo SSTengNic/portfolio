@@ -88,7 +88,7 @@ function HomePage() {
                     refProp={ref1}
                     animate={hasAppeared1 ? "visible" : "hidden"}
                     variants={fadeInVariants}
-                    marginT="8rem"
+                    marginT="14rem"
                 >
                     <Flex
                         height="100%" // Make Flex take the full height of SectionContainer
