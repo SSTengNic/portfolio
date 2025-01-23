@@ -1,3 +1,10 @@
+# To Deploy the application so that it shows up online
+
+run,
+npm run predeploy
+and then,
+npm run deploy
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

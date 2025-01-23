@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import webAppPic from "../../pictures/HomePagePics/New_Web_App_Pic.png";
+import PromptyPic from "../../pictures/WebAppPage_Thumbnails/Promptly_Page.png";
 import PersonalProjectPic from "../../pictures/School_Projects_Card_Front_Page.jpg";
 import InternshipPic from "../../pictures/HomePagePics/1TCC_Pic_Of_Me_Edited_2.jpg";
 import themeColors from "../Shared/Colors";
@@ -37,7 +38,7 @@ const Project = () => {
                     link="/StartupMisc"
                 />
                 <CardComponent
-                    image={webAppPic}
+                    image={PromptyPic}
                     heading="Fullstack Web Applications"
                     description="Projects built using MERN Stack, MySQL, Astro, Deno and many more."
                     link="/WebappProjects"
