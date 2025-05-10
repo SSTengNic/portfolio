@@ -1,26 +1,23 @@
-import { Text, Heading } from "@chakra-ui/react";
+import { Text, Heading, IconButton } from "@chakra-ui/react";
 
-import { AspectRatio } from "@chakra-ui/react";
-
-import React from "react";
 import ModalCardComponent from "../../Shared/ModalCardComponent";
 import ModalComponent from "../../Shared/ModalComponent";
-
-const SimplifyNextCardNugget = ({
+import { FaExternalLinkAlt } from "react-icons/fa";
+import React from "react";
+const TaxiCardNugget = ({
+  subheading,
+  heading,
   onModalOpen,
   isModalOpen,
   onModalClose,
   thumbnailPic,
-  cardHeader,
   modalHeader,
   modalBodyHeading1,
   modalBodyHeading2,
-  modalBodyVideo,
+  modalBodyHeading3,
   modalBodyDescription1,
   modalBodyDescription2,
   modalBodyDescription3,
-  heading,
-  subheading,
 }) => {
   return (
     <ModalCardComponent
@@ -30,9 +27,9 @@ const SimplifyNextCardNugget = ({
       subheading={subheading}
     >
       <Text textAlign="left" ml={2} mb={3} spacing="">
-        As a Technology Analyst Intern, I tackled real-world challenges by
-        designing automation solutions to streamline and improve operational
-        workflows. Click here to learn more about my experience.
+        My groupmates and I used what we have learnt from our Deep Learning
+        module to predict the availability of taxis within a constrained area
+        within the next 3 hours.
       </Text>
       <ModalComponent
         isModalOpen={isModalOpen}
@@ -40,32 +37,33 @@ const SimplifyNextCardNugget = ({
         modalHeader={modalHeader}
       >
         <Heading mb={2}>{modalBodyHeading1}</Heading>
-        <AspectRatio ratio={4 / 2} mb={4}>
-          <iframe
-            src={modalBodyVideo}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </AspectRatio>
 
-        <Text fontSize="lg" mb={5}>
+        <Text fontSize="lg" mb={4}>
           {" "}
           {modalBodyDescription1}
         </Text>
-
-        <Text fontSize="lg" mb={5}>
-          {" "}
+        <Heading>{modalBodyHeading2}</Heading>
+        <Text fontSize="lg" mb={4}>
           {modalBodyDescription2}
         </Text>
-        <Heading mb={2}>{modalBodyHeading2}</Heading>
+        <Heading>{modalBodyHeading3}</Heading>
         <Text fontSize="lg" mb={4}>
           {modalBodyDescription3}
+        </Text>
+        <Text fontSize="lg" mb={4} style={{ textDecoration: "underline" }}>
+          <b>Link to Github repo</b>
+          <IconButton
+            as="a"
+            href="https://github.com/SSTengNic/DL_Project/tree/main"
+            target="_blank"
+            rel="noopener noreferrer"
+            icon={<FaExternalLinkAlt />}
+            ml={2}
+          />
         </Text>
       </ModalComponent>
     </ModalCardComponent>
   );
 };
 
-export default SimplifyNextCardNugget;
+export default TaxiCardNugget;

@@ -1,26 +1,23 @@
-import { Text, Heading } from "@chakra-ui/react";
+import { Text, Heading, IconButton } from "@chakra-ui/react";
 
-import { AspectRatio } from "@chakra-ui/react";
-
-import React from "react";
 import ModalCardComponent from "../../Shared/ModalCardComponent";
 import ModalComponent from "../../Shared/ModalComponent";
-
-const SimplifyNextCardNugget = ({
+import { FaExternalLinkAlt } from "react-icons/fa";
+import React from "react";
+const TCPCardNugget = ({
+  subheading,
+  heading,
   onModalOpen,
   isModalOpen,
   onModalClose,
   thumbnailPic,
-  cardHeader,
   modalHeader,
   modalBodyHeading1,
   modalBodyHeading2,
-  modalBodyVideo,
+  modalBodyHeading3,
   modalBodyDescription1,
   modalBodyDescription2,
   modalBodyDescription3,
-  heading,
-  subheading,
 }) => {
   return (
     <ModalCardComponent
@@ -30,9 +27,9 @@ const SimplifyNextCardNugget = ({
       subheading={subheading}
     >
       <Text textAlign="left" ml={2} mb={3} spacing="">
-        As a Technology Analyst Intern, I tackled real-world challenges by
-        designing automation solutions to streamline and improve operational
-        workflows. Click here to learn more about my experience.
+        My team and I developed an algorithm that uses neural networks to
+        dynamically switch between TCP congestion control types based on
+        predicted loss ratios.{" "}
       </Text>
       <ModalComponent
         isModalOpen={isModalOpen}
@@ -40,26 +37,16 @@ const SimplifyNextCardNugget = ({
         modalHeader={modalHeader}
       >
         <Heading mb={2}>{modalBodyHeading1}</Heading>
-        <AspectRatio ratio={4 / 2} mb={4}>
-          <iframe
-            src={modalBodyVideo}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </AspectRatio>
 
-        <Text fontSize="lg" mb={5}>
+        <Text fontSize="lg" mb={4}>
           {" "}
           {modalBodyDescription1}
         </Text>
-
-        <Text fontSize="lg" mb={5}>
-          {" "}
+        <Heading>{modalBodyHeading2}</Heading>
+        <Text fontSize="lg" mb={4}>
           {modalBodyDescription2}
         </Text>
-        <Heading mb={2}>{modalBodyHeading2}</Heading>
+        <Heading>{modalBodyHeading3}</Heading>
         <Text fontSize="lg" mb={4}>
           {modalBodyDescription3}
         </Text>
@@ -68,4 +55,4 @@ const SimplifyNextCardNugget = ({
   );
 };
 
-export default SimplifyNextCardNugget;
+export default TCPCardNugget;
